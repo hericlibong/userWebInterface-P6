@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+h1, h2 {
+    color: #007bff;
+}
+
+#best-movie-content, #top-rated-movies-content, #category1-content, #category2-content, #custom-category-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#best-movie-content > div, #top-rated-movies-content > div, #category1-content > div, #category2-content > div, #custom-category-content > div {
+    margin: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+#category-selector {
+    margin-bottom: 20px;
+}
