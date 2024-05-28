@@ -73,30 +73,43 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fonction pour charger toutes les catégories disponibles dans un menu déroulant
     function loadCategories() {
         const genreUrl = 'http://127.0.0.1:8000/api/v1/genres/';  // URL correcte des genres
-        fetch(genreUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                const categorySelect = document.getElementById('categories');
-                // Assure que data.results existe et contient les données des genres
-                if (data.results) {
-                    categorySelect.innerHTML = data.results.map(category => `
-                        <option value="${category.name}">${category.name}</option>
-                    `).join('');
-                    categorySelect.addEventListener('change', displayCustomCategoryMovies);
-                } else {
-                    console.error("No genre data found:", data);
-                }
-            })
-            .catch(error => {
-                console.error('Error loading categories:', error);
-                alert('Failed to load categories from the API. Please check the console for more details.');
-            });
+        let nextUrl = genreUrl;  // On commence avec l'URL initiale des genres
+    
+        function fetchNextPage(url) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const categorySelect = document.getElementById('categories');
+                    // Ajoute les nouvelles options de catégorie au menu déroulant
+                    data.results.forEach(category => {
+                        const option = document.createElement('option');
+                        option.value = category.name;
+                        option.textContent = category.name;
+                        categorySelect.appendChild(option);
+                    });
+                    // Vérifie s'il y a une page suivante
+                    if (data.next) {
+                        fetchNextPage(data.next);  // Si oui, continue de charger
+                    } else {
+                        // Ajoute l'écouteur d'événement après avoir chargé toutes les catégories
+                        categorySelect.addEventListener('change', displayCustomCategoryMovies);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading categories:', error);
+                    alert('Failed to load categories from the API. Please check the console for more details.');
+                });
+        }
+    
+        // Commence le processus de chargement des catégories
+        fetchNextPage(nextUrl);
     }
+    
     
 
     // Initialiser l'affichage des sections
