@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <img src="${movie.image_url}" alt="${movie.title}">
                         <h3>${movie.title}</h3>
                         <p>${movie.long_description}</p>
-                        <button onclick="alert('More details')">Détails</button>
+                        <button onclick="showModal('${movie.id}')">Détails</button>
                     </div>
                 `;
             });
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div>
                         <img src="${movie.image_url}" alt="${movie.title}">
                         <h3>${movie.title}</h3>
-                        <p>${movie.description}</p>
+                        <button onclick="showModal('${movie.id}')">Détails</button>
                     </div>
                 `).join('');
             })
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div>
                         <img src="${movie.image_url}" alt="${movie.title}">
                         <h3>${movie.title}</h3>
-                        <p>${movie.description}</p>
+                        <button onclick="showModal('${movie.id}')">Détails</button>
                     </div>
                 `).join('');
             })
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function loadCategories() {
         const genreUrl = 'http://127.0.0.1:8000/api/v1/genres/';
         let nextUrl = genreUrl;
-    
+
         function fetchNextPage(url) {
             fetch(url)
                 .then(response => {
@@ -119,10 +119,37 @@ document.addEventListener('DOMContentLoaded', function() {
                     alert('Failed to load categories from the API. Please check the console for more details.');
                 });
         }
-    
+
         fetchNextPage(nextUrl);
     }
-    
+
+    // Fonction pour afficher la modale avec les détails du film
+    window.showModal = function(movieId) {
+        fetch(`${baseUrl}${movieId}`)
+            .then(response => response.json())
+            .then(movie => {
+                document.getElementById('modal-title').textContent = movie.title;
+                document.getElementById('modal-image').src = movie.image_url;
+                document.getElementById('modal-genre').textContent = 'Genre: ' + movie.genres.join(', ');
+                document.getElementById('modal-release-date').textContent = 'Release Date: ' + movie.date_published;
+                document.getElementById('modal-rating').textContent = 'IMDB Rating: ' + movie.imdb_score;
+                document.getElementById('modal-director').textContent = 'Director: ' + movie.directors.join(', ');
+                document.getElementById('modal-cast').textContent = 'Cast: ' + movie.actors.join(', ');
+                document.getElementById('modal-duration').textContent = 'Duration: ' + movie.duration + ' minutes';
+                document.getElementById('modal-country').textContent = 'Country: ' + movie.countries.join(', ');
+                document.getElementById('modal-box-office').textContent = 'Box Office: ' + movie.worldwide_gross_income;
+                document.getElementById('modal-summary').textContent = movie.long_description;
+                document.getElementById('modal').style.display = 'block';
+            })
+            .catch(error => console.error('Error fetching movie details:', error));
+    }
+
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none';
+    }
+
+    document.querySelector('.close-button').addEventListener('click', closeModal);
+
     // Initialiser l'affichage des sections
     displayBestMovie();
     displayTopRatedMovies();
@@ -130,4 +157,5 @@ document.addEventListener('DOMContentLoaded', function() {
     displayCategoryMovies('Thriller', 'category2-content');
     loadCategories();
 });
+
 
