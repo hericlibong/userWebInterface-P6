@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Fonction pour afficher les films d'une catégorie spécifique
-    function displayCategoryMovies(category, containerId) {
+    function displayCategoryMovies(category, containerId, titleId) {
         fetchMovies(`?genre=${category}&sort_by=-imdb_score`, 6)
             .then(movies => {
                 const container = document.getElementById(containerId);
@@ -77,6 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         <button onclick="showModal('${movie.id}')">Détails</button>
                     </div>
                 `).join('');
+                // Mettre à jour le titre de la section
+                document.getElementById(titleId).textContent = category;
             })
             .catch(error => console.error('Error fetching category movies:', error));
     }
@@ -91,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function loadCategories() {
         const genreUrl = 'http://127.0.0.1:8000/api/v1/genres/';
         let nextUrl = genreUrl;
-
+    
         function fetchNextPage(url) {
             fetch(url)
                 .then(response => {
@@ -102,16 +104,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .then(data => {
                     const categorySelect = document.getElementById('categories');
-                    data.results.forEach(category => {
+                    let firstCategory = null;
+                    data.results.forEach((category, index) => {
                         const option = document.createElement('option');
                         option.value = category.name;
                         option.textContent = category.name;
                         categorySelect.appendChild(option);
+    
+                        // Sauvegarder la première catégorie
+                        if (index === 0) {
+                            firstCategory = category.name;
+                        }
                     });
                     if (data.next) {
                         fetchNextPage(data.next);
                     } else {
                         categorySelect.addEventListener('change', displayCustomCategoryMovies);
+    
+                        // Afficher la première catégorie par défaut
+                        if (firstCategory) {
+                            categorySelect.value = firstCategory;
+                            displayCategoryMovies(firstCategory, 'custom-category-content');
+                        }
                     }
                 })
                 .catch(error => {
@@ -119,9 +133,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     alert('Failed to load categories from the API. Please check the console for more details.');
                 });
         }
-
+    
         fetchNextPage(nextUrl);
     }
+    
+    
 
     // Fonction pour afficher la modale avec les détails du film
     window.showModal = function(movieId) {
@@ -153,8 +169,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialiser l'affichage des sections
     displayBestMovie();
     displayTopRatedMovies();
-    displayCategoryMovies('Biography', 'category1-content');
-    displayCategoryMovies('Thriller', 'category2-content');
+    displayCategoryMovies('Biography', 'category1-content', 'category1-title');
+    displayCategoryMovies('Thriller', 'category2-content', 'category2-title');
     loadCategories();
 });
 
