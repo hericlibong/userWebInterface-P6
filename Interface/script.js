@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function loadCategories() {
         const genreUrl = 'http://127.0.0.1:8000/api/v1/genres/';
         let nextUrl = genreUrl;
+        let firstCategory = null;  // Initialiser la première catégorie en dehors de la fonction fetchNextPage
     
         function fetchNextPage(url) {
             fetch(url)
@@ -104,15 +105,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .then(data => {
                     const categorySelect = document.getElementById('categories');
-                    let firstCategory = null;
                     data.results.forEach((category, index) => {
                         const option = document.createElement('option');
                         option.value = category.name;
                         option.textContent = category.name;
                         categorySelect.appendChild(option);
     
-                        // Sauvegarder la première catégorie
-                        if (index === 0) {
+                        // Définir la première catégorie globale si elle n'est pas encore définie
+                        if (!firstCategory) {
                             firstCategory = category.name;
                         }
                     });
@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
         fetchNextPage(nextUrl);
     }
+    
     
     
 

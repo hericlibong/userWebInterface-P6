@@ -44,7 +44,10 @@ h1, h2 {
 #category-selector {
     margin-bottom: 20px;
 }
-/* Ajouté dans style.css */
+
+
+
+/* Modal dans style.css */
 .modal {
     position: fixed;
     z-index: 1000;
@@ -84,3 +87,5 @@ h1, h2 {
     text-decoration: none;
     cursor: pointer;
 }
+
+
