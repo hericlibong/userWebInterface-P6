@@ -16,46 +16,81 @@
         </header>
 
         <section id="best-movie">
-            <h2>Meilleur Film</h2>
-            <div id="best-movie-content">
-                <!-- Meilleur film contenu dynamique -->
-            </div>
-        </section>
-
-        <section id="top-rated-movies">
-            <h2>Films les mieux notés</h2>
-            <div id="top-rated-movies-content">
-                <!-- Films les mieux notés contenu dynamique -->
-            </div>
-        </section>
-
-        <section id="category1">
-            <h2 id="category1-title">Catégorie 1</h2>
-            <div id="category1-content">
-                <!-- Catégorie 1 contenu dynamique -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Meilleur Film</h2>
+                        <div id="best-movie-content" class="d-flex flex-column align-items-center">
+                            <!-- Meilleur film contenu dynamique -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         
-        <section id="category2">
-            <h2 id="category2-title">Catégorie 2</h2>
-            <div id="category2-content">
-                <!-- Catégorie 2 contenu dynamique -->
+
+        <section id="top-rated-movies">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Films les mieux notés</h2>
+                        <div id="top-rated-movies-content" class="row">
+                            <!-- Films les mieux notés contenu dynamique -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+        
+
+        <section id="category1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 id="category1-title">Catégorie 1</h2>
+                        <div id="category1-content" class="row">
+                            <!-- Catégorie 1 contenu dynamique -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section id="category2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 id="category2-title">Catégorie 2</h2>
+                        <div id="category2-content" class="row">
+                            <!-- Catégorie 2 contenu dynamique -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         
 
         <section id="custom-category">
-            <h2>Catégorie libre</h2>
-            <div id="category-selector">
-                <label for="categories">Choisissez une catégorie:</label>
-                <select id="categories">
-                    <!-- Options de catégorie dynamique -->
-                </select>
-            </div>
-            <div id="custom-category-content">
-                <!-- Catégorie libre contenu dynamique -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 id="custom-category-title">Catégorie libre</h2>
+                        <div id="category-selector">
+                            <label for="categories">Choisissez une catégorie:</label>
+                            <select id="categories" class="form-select">
+                                <!-- Options de catégorie dynamique -->
+                            </select>
+                        </div>
+                        <div id="custom-category-content" class="row">
+                            <!-- Catégorie libre contenu dynamique -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+        
     </div>
 
 
@@ -79,5 +114,8 @@
 
 
     <script src="script.js" defer></script>
+    <script src="movieCardCreators.js" defer></script>
+
+
 </body>
 </html>
