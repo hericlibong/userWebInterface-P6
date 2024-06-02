@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
@@ -27,17 +31,197 @@ h1, h2 {
     color: #007bff;
 }
 
-#best-movie-content, #top-rated-movies-content, #category1-content, #category2-content, #custom-category-content {
+/* Styles pour les cartes de films */
+.movie-card {
+    margin: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    box-sizing: border-box;
+   
+}
+
+
+
+/* width: 835px;
+height: 369px;
+top: -124px;
+left: -1380px;
+gap: 0px;
+border: 6px 0px 0px 0px;
+opacity: 0px; */
+
+
+
+
+
+
+/* Styles spécifiques à la section Meilleur Film */
+#best-movie-content {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #0d0d0d;
+    border-radius: 5px;
+    padding: 20px;
+    border: 6px 0px 0px 0px;
+    gap: 0px;
+    right: 500px;
+    width: 835px;
+    margin-left: 10rem;
+   
+}
+
+#best-movie-content .movie-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    padding: 0;
+    width: 100%;
+}
+
+#best-movie-content .movie-card .card {
+    display: flex;
+    flex-direction: row;
+    border: none;
+    width: 100%;
+}
+
+#best-movie-content .movie-card .card-img-top {
+    max-width: 150px;
+    border-radius: 5px;
+}
+
+#best-movie-content .movie-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+#best-movie-content .movie-card .card-title {
+    font-family: Oswald;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 71.14px;
+    color: #333;
+    text-align: left;
+    /* margin: 0 0 10px 0; */
+
+    
+}
+
+/* titre typo :
+
+font-family: Oswald;
+font-size: 48px;
+font-weight: 600;
+line-height: 71.14px;
+text-align: left;
+ */
+
+ /* titre layout:
+ 
+ width: 463px;
+height: 44px;
+top: -96px;
+left: -1092px;
+gap: 0px;
+opacity: 0px; */
+
+
+#best-movie-content .movie-card .card-text {
+    flex-grow: 1;
+    margin-bottom: 10px;
+    top: -10px;
+    left: -1083px;
+    gap: 0px;
+    font-family: Oswald;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 30px;
+    text-align: left;
+    width: 501px;
+    
+}
+
+/* layout :
+
+width: 501px;
+height: 113px;
+top: -10px;
+left: -1083px;
+gap: 0px;
+opacity: 0px; */
+
+
+#best-movie-content .movie-card .btn {
+    align-self: flex-end;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+    margin-right: 5rem;
+    gap: 0px;
+    opacity: 0px;
+    left: -1355px
+}
+
+/* width: 227px;
+height: 334px;
+top: -106px;
+left: -1355px;
+gap: 0px;
+opacity: 0px; */
+
+
+#best-movie-content .movie-card .btn:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+#best-movie-content .movie-card .card-img-top {
+    max-width: 227px; 
+    height: 334px;
+    left: -1355px;
+    top: -106px;
+}
+
+
+/* image
+
+width: 227px;
+height: 334px;
+top: -106px;
+left: -1355px;
+gap: 0px;
+opacity: 0px; */
+
+
+
+
+/*typography : 
+
+font-family: Oswald;
+font-size: 28px;
+font-weight: 200;
+line-height: 41.5px;
+text-align: left; */
+
+
+
+
+#top-rated-movies-content, #category1-content, #category2-content, #custom-category-content {
     display: flex;
     flex-wrap: wrap;
 }
 
+/* Suppression de la redondance pour les contenus des sections */
 #best-movie-content > div, #top-rated-movies-content > div, #category1-content > div, #category2-content > div, #custom-category-content > div {
     margin: 10px;
     padding: 10px;
     background-color: #f1f1f1;
     border-radius: 5px;
-    width: calc(33.333% - 20px);
     box-sizing: border-box;
 }
 
@@ -45,9 +229,7 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
-
-
-/* Modal dans style.css */
+/* Modal */
 .modal {
     position: fixed;
     z-index: 1000;
@@ -61,8 +243,7 @@ h1, h2 {
 
 .modal-content {
     position: relative;
-    /* background-color: #fefefe; */
-    background-color: #fff;
+    background-color: #fefefe;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
@@ -88,4 +269,35 @@ h1, h2 {
     cursor: pointer;
 }
 
+/* Mobile Styles */
+@media (max-width: 575.98px) {
+    .movie-card {
+        width: 100%;
+    }
 
+    .modal-content {
+        width: 90%;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .movie-card {
+        width: 50%;
+    }
+
+    .modal-content {
+        width: 70%;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    .movie-card {
+        width: calc(33.333% - 20px);
+    }
+
+    .modal-content {
+        width: 50%;
+    }
+}
