@@ -1,6 +1,4 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-
 
 body {
     font-family: Arial, sans-serif;
@@ -19,16 +17,38 @@ header {
     margin-bottom: 20px;
 }
 
+
+.logo-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+    
+
 section {
     margin-bottom: 20px;
     padding: 10px;
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 0px solid #ddd;
     border-radius: 5px;
 }
 
-h1, h2 {
+h1 {
     color: #007bff;
+}
+
+
+/* Style commun pour les titres de section h2 */
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 71.14px;
+    text-align: left;
+    margin: 0 0 20px 0; /* Ajout d'une marge inférieure pour espacer les titres des sections */
+    color: #000000;
 }
 
 /* Styles pour les cartes de films */
@@ -38,175 +58,9 @@ h1, h2 {
     background-color: #f1f1f1;
     border-radius: 5px;
     box-sizing: border-box;
-   
 }
 
 
-
-/* width: 835px;
-height: 369px;
-top: -124px;
-left: -1380px;
-gap: 0px;
-border: 6px 0px 0px 0px;
-opacity: 0px; */
-
-
-
-
-
-
-/* Styles spécifiques à la section Meilleur Film */
-#best-movie-content {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    border: 1px solid #0d0d0d;
-    border-radius: 5px;
-    padding: 20px;
-    border: 6px 0px 0px 0px;
-    gap: 0px;
-    right: 500px;
-    width: 835px;
-    margin-left: 10rem;
-   
-}
-
-#best-movie-content .movie-card {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    border: none;
-    padding: 0;
-    width: 100%;
-}
-
-#best-movie-content .movie-card .card {
-    display: flex;
-    flex-direction: row;
-    border: none;
-    width: 100%;
-}
-
-#best-movie-content .movie-card .card-img-top {
-    max-width: 150px;
-    border-radius: 5px;
-}
-
-#best-movie-content .movie-card .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-}
-
-#best-movie-content .movie-card .card-title {
-    font-family: Oswald;
-    font-size: 48px;
-    font-weight: 600;
-    line-height: 71.14px;
-    color: #333;
-    text-align: left;
-    /* margin: 0 0 10px 0; */
-
-    
-}
-
-/* titre typo :
-
-font-family: Oswald;
-font-size: 48px;
-font-weight: 600;
-line-height: 71.14px;
-text-align: left;
- */
-
- /* titre layout:
- 
- width: 463px;
-height: 44px;
-top: -96px;
-left: -1092px;
-gap: 0px;
-opacity: 0px; */
-
-
-#best-movie-content .movie-card .card-text {
-    flex-grow: 1;
-    margin-bottom: 10px;
-    top: -10px;
-    left: -1083px;
-    gap: 0px;
-    font-family: Oswald;
-    font-size: 20px;
-    font-weight: 200;
-    line-height: 30px;
-    text-align: left;
-    width: 501px;
-    
-}
-
-/* layout :
-
-width: 501px;
-height: 113px;
-top: -10px;
-left: -1083px;
-gap: 0px;
-opacity: 0px; */
-
-
-#best-movie-content .movie-card .btn {
-    align-self: flex-end;
-    background-color: #dc3545;
-    border-color: #dc3545;
-    color: #fff;
-    margin-right: 5rem;
-    gap: 0px;
-    opacity: 0px;
-    left: -1355px
-}
-
-/* width: 227px;
-height: 334px;
-top: -106px;
-left: -1355px;
-gap: 0px;
-opacity: 0px; */
-
-
-#best-movie-content .movie-card .btn:hover {
-    background-color: #c82333;
-    border-color: #bd2130;
-}
-
-#best-movie-content .movie-card .card-img-top {
-    max-width: 227px; 
-    height: 334px;
-    left: -1355px;
-    top: -106px;
-}
-
-
-/* image
-
-width: 227px;
-height: 334px;
-top: -106px;
-left: -1355px;
-gap: 0px;
-opacity: 0px; */
-
-
-
-
-/*typography : 
-
-font-family: Oswald;
-font-size: 28px;
-font-weight: 200;
-line-height: 41.5px;
-text-align: left; */
 
 
 
@@ -214,15 +68,6 @@ text-align: left; */
 #top-rated-movies-content, #category1-content, #category2-content, #custom-category-content {
     display: flex;
     flex-wrap: wrap;
-}
-
-/* Suppression de la redondance pour les contenus des sections */
-#best-movie-content > div, #top-rated-movies-content > div, #category1-content > div, #category2-content > div, #custom-category-content > div {
-    margin: 10px;
-    padding: 10px;
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    box-sizing: border-box;
 }
 
 #category-selector {
@@ -271,33 +116,229 @@ text-align: left; */
 
 /* Mobile Styles */
 @media (max-width: 575.98px) {
-    .movie-card {
+    body {
+        width: 456px;
+        height: 5487px;
+        margin: 0 auto;
+        border: 1px solid transparent;
+        opacity: 1;
+    }
+
+    #best-movie-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        margin-left: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    #best-movie-content .card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #best-movie-content .card-img-top {
+        max-width: 150px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    #best-movie-content .card-body {
+        padding: 10px;
+        text-align: center;
+    }
+
+    #best-movie-content .card-title {
+        font-size: 24px;
+        line-height: 36px;
         width: 100%;
     }
 
-    .modal-content {
-        width: 90%;
+    #best-movie-content .card-text {
+        font-size: 16px;
+        line-height: 24px;
+        width: 100%;
+    }
+
+    #best-movie-content .btn {
+        margin: 10px 0;
     }
 }
 
 /* Tablet Styles */
 @media (min-width: 576px) and (max-width: 767.98px) {
-    .movie-card {
-        width: 50%;
+    body {
+        width: 788px;
+        height: 3586px;
+        margin: 0 auto;
+        border: 1px solid transparent;
+        opacity: 1;
     }
 
-    .modal-content {
-        width: 70%;
+    h2 {
+        width: 243px;
+        height: 71px;
+        margin-top: -226px;
+        margin-left: -1382px;
+        gap: 0px;
+        opacity: 1;
+    }
+
+    #best-movie-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        margin-left:0;
+        width: 100%;
+        height: auto;
+    }
+
+    #best-movie-content .card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #best-movie-content .card-img-top {
+        max-width: 200px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    #best-movie-content .card-body {
+        padding: 15px;
+        text-align: center;
+    }
+
+    #best-movie-content .card-title {
+        font-size: 32px;
+        line-height: 48px;
+        width: 100%;
+    }
+
+    #best-movie-content .card-text {
+        font-size: 18px;
+        line-height: 27px;
+        width: 100%;
+    }
+
+    #best-movie-content .btn {
+        margin: 10px 0;
     }
 }
 
 /* Desktop Styles */
 @media (min-width: 768px) {
-    .movie-card {
-        width: calc(33.333% - 20px);
+
+    .logo-image {
+        width: 837px;
+        height: 122px;
+        margin-left: 4em;
+    }
+    body {
+        width: 1054px;
+        height: 4451px;
+        margin: 0 auto;
+        border: 1px solid transparent;
+        opacity: 1;
+    }
+    
+
+    #best-movie-content {
+        display: flex;    
+        width: 835px;
+        height: 369px;
+        top: -124px;
+        left: -1380px;
+        gap: 0px;
+        border: 6px solid #333;
+        opacity: 0px;
+        margin-left: 4em; 
+        }
+
+    #best-movie h2 {
+        margin-left: 1.2em;
     }
 
-    .modal-content {
-        width: 50%;
+    #best-movie-content .card-img-top {
+        max-width: 227px; 
+        height: 334px;
+        top: -106px;
+        left: -1355px;
+        gap: 0px;
+        opacity: 0px;
+        margin-left: 2em ;
+        }
+    
+        #best-movie-content .movie-card {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border: none;
+        padding: 0;
+        width: 100%;
+        }
+        
+    #best-movie-content .card {
+        display: flex;
+        flex-direction: row;
+        border: none;
+        width: 100%;
+        }
+    
+    #best-movie-content .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        }
+        
+    #best-movie-content .card-title {
+        font-family: Oswald;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 71.14px;
+        color: #333;
+        text-align: left;
+        width: 463px;
+        height: 70px;    
+        }
+        
+    #best-movie-content .card-text {
+        flex-grow: 1;
+        margin-bottom: 10px;
+        font-family: Oswald;
+        font-size: 20px;
+        font-weight: 200;
+        line-height: 30px;
+        text-align: left;
+        width: 501px;
+        }
+        
+    #best-movie-content .btn {
+        align-self: flex-end;
+        background-color: #dc3545;
+        border-color: #dc3545;
+        color: #fff;
+        margin-right: 5rem;
+        border-radius: 25px;
+        padding: 10px 20px 10px 20px;
+        
+    }
+
+
+    /* width: Fixed (166px)px;
+height: Fixed (68px)px;
+top: 130px;
+left: -762px;
+padding: 2px 4px 2px 4px;
+gap: 10px;
+border-radius: 25px 0px 0px 0px;
+opacity: 0px; */
+
+    
+    #best-movie-content .btn:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
     }
 }
