@@ -102,21 +102,35 @@
             <span class="close-button" onclick="closeModal()">&times;</span>
             <div class="modal-header">
                 <h2 id="modal-title"></h2>
-                <img id="modal-image" src="" alt="Movie Image" style="float: right; width: 20%; margin-left: 20px;">
+                <img id="modal-image" src="" alt="Movie Image" style="float: right; width: 20%;">
             </div>
             <div class="modal-body">
-                <p id="modal-release-date"></p>
-                <p id="modal-genre"></p>
-                <p id="modal-duration"></p>
-                <p id="modal-rating"></p>
-                <p id="modal-director"></p>
-                <p id="modal-cast"></p>
+                <p id="modal-info"><strong id="modal-year"></strong> - <span id="modal-genre"></span></p>
+                <p id="modal-additional-info"><span id="modal-company"></span> - <span id="modal-duration"></span> (<span id="modal-country"></span>)</p>
+                <p id="modal-rating">IMDB Score: <span></span></p>
+                <p><strong>Réalisé par:</strong> <span id="modal-director"></span></p>
                 <p id="modal-summary"></p>
-                <p id="modal-country"></p>
-                <p id="modal-box-office"></p>
+                <p><strong>Avec:</strong> <span id="modal-cast"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeModal()" style="background-color: red; color: white;">Fermer</button>
             </div>
         </div>
     </div>
+    
+    
+
+   
+
+
+
+    
+    
+    
+
+    
+    
+    
     
 
 

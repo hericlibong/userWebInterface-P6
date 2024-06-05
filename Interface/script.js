@@ -111,6 +111,13 @@ document.addEventListener('DOMContentLoaded', function() {
         fetchNextPage(nextUrl);
     }
 
+    
+
+
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none';
+    }
+
     window.showModal = function(movieId) {
         fetch(`${baseUrl}${movieId}`)
             .then(response => response.json())
@@ -118,24 +125,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('modal-title').textContent = movie.title;
                 document.getElementById('modal-image').src = movie.image_url;
                 document.getElementById('modal-genre').textContent = 'Genre: ' + movie.genres.join(', ');
-                document.getElementById('modal-release-date').textContent = 'Release Date: ' + movie.date_published;
                 document.getElementById('modal-rating').textContent = 'IMDB Rating: ' + movie.imdb_score;
+                document.getElementById('modal-company').textContent = movie.company;
                 document.getElementById('modal-director').textContent = 'Director: ' + movie.directors.join(', ');
                 document.getElementById('modal-cast').textContent = 'Cast: ' + movie.actors.join(', ');
-                document.getElementById('modal-duration').textContent = 'Duration: ' + movie.duration + ' minutes';
-                document.getElementById('modal-country').textContent = 'Country: ' + movie.countries.join(', ');
-                document.getElementById('modal-box-office').textContent = 'Box Office: ' + movie.worldwide_gross_income;
+                document.getElementById('modal-duration').textContent = movie.duration + ' minutes';
+                document.getElementById('modal-country').textContent = movie.countries.join(', ');
                 document.getElementById('modal-summary').textContent = movie.long_description;
                 document.getElementById('modal').style.display = 'block';
             })
             .catch(error => console.error('Error fetching movie details:', error));
-    }
+    };
 
-    function closeModal() {
-        document.getElementById('modal').style.display = 'none';
-    }
+    // Assurez-vous que le bouton de fermeture est bien attaché après que le DOM est chargé
+    document.querySelectorAll('.close-button').forEach(button => {
+        button.addEventListener('click', closeModal);
+    });
 
-    document.querySelector('.close-button').addEventListener('click', closeModal);
+    // Attach event listener to 'Fermer' button in the modal footer if it's not closing
+    document.querySelector('.modal-footer button').addEventListener('click', closeModal);
+
+    
 
     displayBestMovie();
     displayTopRatedMovies();

@@ -166,7 +166,7 @@ h2 {
 }
 
 /* Tablet Styles */
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (min-width: 576px) and (max-width: 768px) {
     body {
         width: 788px;
         height: 3586px;
@@ -350,8 +350,8 @@ h2 {
 #category1-content .card-img-top,
 #category2-content .card-img-top,
 #custom-category-content .card-img-top {
-    width: 231px;
-    height: 285px;
+    width: 252px;
+    height: 247px;
 }
 
 #top-rated-movies-content,
@@ -467,17 +467,23 @@ h2 {
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 60%; /* Réduit la largeur pour mieux correspondre à l'exemple */
+    width: 50%; /* Réduit la largeur pour mieux correspondre à l'exemple */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .modal-header {
     overflow: hidden; /* Garantit que les éléments flottants sont contenus */
+    margin-bottom: 20px;
 }
 
 .modal-body {
     clear: both; /* Efface les floats pour éviter le débordement de contenu */
-    margin-top: 20px;
+    margin-top: 16px;
+}
+
+.modal-footer {
+    text-align: center; /* Centrer le bouton de fermeture */
+    padding-top: 20px;
 }
 
 .close-button {
@@ -499,7 +505,7 @@ h2 {
 }
 
 .modal h2 {
-    color: #0056b3; /* Donne une couleur de thème, ici un bleu foncé */
+    color: #000000; /* Donne une couleur de thème, ici un bleu foncé */
     margin: 0 0 10px 0;
 }
 
