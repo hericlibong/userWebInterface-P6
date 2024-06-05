@@ -97,22 +97,27 @@
 
 
     <!-- Ajouté à la fin du body dans index.html -->
-<div id="modal" class="modal" style="display: none;">
-    <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h2 id="modal-title"></h2>
-        <img id="modal-image" src="" alt="Movie Image">
-        <p id="modal-genre"></p>
-        <p id="modal-release-date"></p>
-        <p id="modal-rating"></p>
-        <p id="modal-director"></p>
-        <p id="modal-cast"></p>
-        <p id="modal-duration"></p>
-        <p id="modal-country"></p>
-        <p id="modal-box-office"></p>
-        <p id="modal-summary"></p>
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <img id="modal-image" src="" alt="Movie Image" style="float: right; width: 20%; margin-left: 20px;">
+            </div>
+            <div class="modal-body">
+                <p id="modal-release-date"></p>
+                <p id="modal-genre"></p>
+                <p id="modal-duration"></p>
+                <p id="modal-rating"></p>
+                <p id="modal-director"></p>
+                <p id="modal-cast"></p>
+                <p id="modal-summary"></p>
+                <p id="modal-country"></p>
+                <p id="modal-box-office"></p>
+            </div>
+        </div>
     </div>
-</div>
+    
 
 
     <script src="script.js" defer></script>

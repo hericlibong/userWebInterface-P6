@@ -1,6 +1,6 @@
 function createMovieCard(movie) {
     return `
-        <div class="col-md-4 col-sm-6 col-xs-12 movie-card">
+        <div class="col-md-3 col-sm-6 col-xs-12 movie-card">
             <div class="card">
                 <img src="${movie.image_url}" class="card-img-top" alt="${movie.title}">
                 <div class="card-body">

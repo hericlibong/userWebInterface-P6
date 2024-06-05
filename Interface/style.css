@@ -74,45 +74,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Modal */
-.modal {
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
 
-.modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    border: none;
-    background: none;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
 
 /* Mobile Styles */
 @media (max-width: 575.98px) {
@@ -124,6 +86,13 @@ h2 {
         opacity: 1;
     }
 
+    .logo-image {
+        width: 388px;
+        height: 100px;
+        margin-right: 5em;
+        
+    }
+
     #best-movie-content {
         flex-direction: column;
         align-items: center;
@@ -131,18 +100,27 @@ h2 {
         margin-left: 0;
         width: 100%;
         height: auto;
+        border: 6px solid #333;
     }
 
-    #best-movie-content .card {
+    #best-movie h2 {
+        font-size: 32px;
+        margin-left: 2em;
+    }
+
+    #best-movie-content .movie-card {
         flex-direction: column;
         align-items: center;
+       
     }
 
     #best-movie-content .card-img-top {
-        max-width: 150px;
-        height: auto;
-        margin-bottom: 10px;
+        max-width: 316px;
+        height: 377px;
+        margin-top: 10px;
+        
     }
+
 
     #best-movie-content .card-body {
         padding: 10px;
@@ -150,20 +128,41 @@ h2 {
     }
 
     #best-movie-content .card-title {
-        font-size: 24px;
-        line-height: 36px;
+        font-size: 32px;
         width: 100%;
+        font-weight: 600;
+        line-height: 47.42px;
+        text-align: left
     }
+
+
 
     #best-movie-content .card-text {
         font-size: 16px;
         line-height: 24px;
         width: 100%;
+        text-align: left;
     }
 
+  
+
     #best-movie-content .btn {
-        margin: 10px 0;
+        align-items: center;
+        background-color: #dc3545;
+        border-color: #dc3545;
+        color: #fff;
+        margin-right: 5rem;
+        border-radius: 25px;
+        padding: 10px 20px 10px 20px;
+        width: 91px;
+        gap: 10px;
+        left: 1238px;
+        
     }
+
+
+
+
 }
 
 /* Tablet Styles */
@@ -175,6 +174,18 @@ h2 {
         border: 1px solid transparent;
         opacity: 1;
     }
+
+    .logo-image {
+        width: 500px;
+        height: 137px;
+        margin-left: 1em;
+       
+        border: 1px 0px 0px 0px;
+        opacity: 0px;
+    }
+
+
+
 
     h2 {
         width: 243px;
@@ -326,19 +337,183 @@ h2 {
         
     }
 
-
-    /* width: Fixed (166px)px;
-height: Fixed (68px)px;
-top: 130px;
-left: -762px;
-padding: 2px 4px 2px 4px;
-gap: 10px;
-border-radius: 25px 0px 0px 0px;
-opacity: 0px; */
-
     
     #best-movie-content .btn:hover {
         background-color: #c82333;
         border-color: #bd2130;
     }
+
+    
+
+     /* Style commun pour toutes les cartes dans les différentes catégories */
+#top-rated-movies-content .card-img-top,
+#category1-content .card-img-top,
+#category2-content .card-img-top,
+#custom-category-content .card-img-top {
+    width: 231px;
+    height: 285px;
 }
+
+#top-rated-movies-content,
+#category1-content,
+#category2-content,
+#custom-category-content {
+    margin-left: 3px;
+}
+
+#top-rated-movies h2,
+#category1-title,
+#category2-title,
+#custom-category-title {
+    margin-left: 1.2em;
+}
+
+#top-rated-movies .movie-card,
+#category1 .movie-card,
+#category2 .movie-card,
+#custom-category .movie-card {
+    margin-left: 10px;  /* Ajoute une marge à gauche de chaque carte */
+    margin: 15px;
+}
+
+#top-rated-movies .movie-card .card,
+#category1 .movie-card .card,
+#category2 .movie-card .card,
+#custom-category .movie-card .card {
+    position: relative;
+    overflow: hidden;
+}
+
+#top-rated-movies .movie-card .card img,
+#category1 .movie-card .card img,
+#category2 .movie-card .card img,
+#custom-category .movie-card .card img {
+    transition: transform .5s ease;
+    width: 100%;
+}
+
+#top-rated-movies .movie-card .card:hover img,
+#category1 .movie-card .card:hover img,
+#category2 .movie-card .card:hover img,
+#custom-category .movie-card .card:hover img {
+    transform: scale(1.1);
+}
+
+#top-rated-movies .movie-card .card-body,
+#category1 .movie-card .card-body,
+#category2 .movie-card .card-body,
+#custom-category .movie-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: absolute;
+    top: 10px; /* Déplacé au sommet */
+    background: rgba(0, 0, 0, 0.5); /* Fond transparent noir */
+    color: white;
+    width: 100%;
+    padding: 10px;
+    transition: background-color .5s ease; /* Transition pour l'effet visuel */
+}
+
+#top-rated-movies .movie-card .card-body:hover,
+#category1 .movie-card .card-body:hover,
+#category2 .movie-card .card-body:hover,
+#custom-category .movie-card .card-body:hover {
+    background: rgba(0, 0, 0, 0.7); /* Assombrir légèrement le fond au survol */
+}
+
+#top-rated-movies .movie-card .card-title,
+#category1 .movie-card .card-title,
+#category2 .movie-card .card-title,
+#custom-category .movie-card .card-title {
+    margin-bottom: 5px;
+    font-weight: bold;
+    align-self: flex-start;
+    font-size: 19px;
+}
+
+#top-rated-movies .movie-card .btn-primary,
+#category1 .movie-card .btn-primary,
+#category2 .movie-card .btn-primary,
+#custom-category .movie-card .btn-primary {
+    background-color: black;
+    border: none;
+    color: white;
+    align-self: flex-end;
+}
+
+#top-rated-movies .movie-card .btn-primary:hover,
+#category1 .movie-card .btn-primary:hover,
+#category2 .movie-card .btn-primary:hover,
+#custom-category .movie-card .btn-primary:hover {
+    background-color: #333; /* Couleur de fond au survol */
+}
+/* Modal */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; /* Réduit la largeur pour mieux correspondre à l'exemple */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.modal-header {
+    overflow: hidden; /* Garantit que les éléments flottants sont contenus */
+}
+
+.modal-body {
+    clear: both; /* Efface les floats pour éviter le débordement de contenu */
+    margin-top: 20px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    border: none;
+    background: none;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal h2 {
+    color: #0056b3; /* Donne une couleur de thème, ici un bleu foncé */
+    margin: 0 0 10px 0;
+}
+
+.modal p {
+    margin: 4px 0; /* Des marges plus petites pour une meilleure lisibilité */
+    font-size: 16px; /* Taille de police standard pour le texte */
+}
+
+.modal img {
+    max-height: 200px; /* Contrôle la taille maximale de l'image pour l'uniformité */
+}
+
+
+}
+
+
+
