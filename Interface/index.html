@@ -99,11 +99,15 @@
     <!-- Ajouté à la fin du body dans index.html -->
     <div id="modal" class="modal" style="display: none;">
         <div class="modal-content">
-            <span class="close-button" onclick="closeModal()">&times;</span>
+            <!-- <span class="close-button" onclick="closeModal()">&times;</span> -->
             <div class="modal-header">
-                <h2 id="modal-title"></h2>
-                <img id="modal-image" src="" alt="Movie Image" style="float: right; width: 20%;">
+                <div>
+                    <h2 id="modal-title">Titre du film</h2>
+                    <p id="modal-info"><strong id="modal-year"></strong> - <strong id="modal-genre"></strong></p>
+                </div>
+                <img id="modal-image" src="" alt="Movie Image">
             </div>
+            
             <div class="modal-body">
                 <p id="modal-info"><strong id="modal-year"></strong> - <span id="modal-genre"></span></p>
                 <p id="modal-additional-info"><span id="modal-company"></span> - <span id="modal-duration"></span> (<span id="modal-country"></span>)</p>

@@ -124,7 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(movie => {
                 document.getElementById('modal-title').textContent = movie.title;
                 document.getElementById('modal-image').src = movie.image_url;
-                document.getElementById('modal-genre').textContent = 'Genre: ' + movie.genres.join(', ');
+                document.getElementById('modal-genre').textContent = movie.genres.join(', ');
+                document.getElementById('modal-year').textContent = movie.year;
                 document.getElementById('modal-rating').textContent = 'IMDB Rating: ' + movie.imdb_score;
                 document.getElementById('modal-company').textContent = movie.company;
                 document.getElementById('modal-director').textContent = 'Director: ' + movie.directors.join(', ');

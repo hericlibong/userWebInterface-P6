@@ -456,25 +456,62 @@ h2 {
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    height:100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
 }
+
 
 .modal-content {
     position: relative;
     background-color: #fefefe;
     margin: 5% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #090808;
     width: 50%; /* Réduit la largeur pour mieux correspondre à l'exemple */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+
 .modal-header {
-    overflow: hidden; /* Garantit que les éléments flottants sont contenus */
+    display: flex;
+    align-items: flex-start; /* Alignement au haut */
+    justify-content: start;
     margin-bottom: 20px;
 }
+
+.modal-header > div {
+    flex-grow: 1;
+}
+
+#modal-title {
+    margin: 0; /* Supprime la marge par défaut */
+    flex-grow: 1;
+    margin-right: 20px; /* Espace entre le titre et l'image */
+    font-size: 40px; /* Taille de police du titre */
+    color: #000000;
+    line-height: 1.2; /* Ajustez l'interligne pour rapprocher les lignes de texte */
+}
+
+
+#modal-info {
+    font-size: 16px; /* Taille de police des informations */
+    /* font-weight: bold; Met en gras */
+    margin-top: 4px; /* Réduit l'espace entre le titre et les infos */
+    margin-bottom: 0; /* Réduit l'espace sous les infos */
+    line-height: 1.2; /* Ajustez l'interligne pour rapprocher les lignes de texte */
+    font-family: 'Oswald', sans-serif;
+    color:#000000;
+}
+
+#modal-image {
+    flex-shrink: 0; /* Empêche l'image de rétrécir */
+    width: 227px;
+    height: auto;
+    display: inline-block;
+}
+
+
 
 .modal-body {
     clear: both; /* Efface les floats pour éviter le débordement de contenu */
@@ -504,18 +541,9 @@ h2 {
     cursor: pointer;
 }
 
-.modal h2 {
-    color: #000000; /* Donne une couleur de thème, ici un bleu foncé */
-    margin: 0 0 10px 0;
-}
-
 .modal p {
     margin: 4px 0; /* Des marges plus petites pour une meilleure lisibilité */
     font-size: 16px; /* Taille de police standard pour le texte */
-}
-
-.modal img {
-    max-height: 200px; /* Contrôle la taille maximale de l'image pour l'uniformité */
 }
 
 
