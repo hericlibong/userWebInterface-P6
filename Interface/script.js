@@ -126,10 +126,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('modal-image').src = movie.image_url;
                 document.getElementById('modal-genre').textContent = movie.genres.join(', ');
                 document.getElementById('modal-year').textContent = movie.year;
-                document.getElementById('modal-rating').textContent = 'IMDB Rating: ' + movie.imdb_score;
+                document.getElementById('modal-rating').textContent = 'IMDB Rating: ' + movie.imdb_score + '/10';
                 document.getElementById('modal-company').textContent = movie.company;
-                document.getElementById('modal-director').textContent = 'Director: ' + movie.directors.join(', ');
-                document.getElementById('modal-cast').textContent = 'Cast: ' + movie.actors.join(', ');
+                document.getElementById('modal-director').textContent = movie.directors.join(', ');
+                document.getElementById('modal-cast').textContent = movie.actors.join(', ');
                 document.getElementById('modal-duration').textContent = movie.duration + ' minutes';
                 document.getElementById('modal-country').textContent = movie.countries.join(', ');
                 document.getElementById('modal-summary').textContent = movie.long_description;

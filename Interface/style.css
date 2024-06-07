@@ -478,6 +478,8 @@ h2 {
     align-items: flex-start; /* Alignement au haut */
     justify-content: start;
     margin-bottom: 20px;
+    font-family: 'Oswald', sans-serif;
+    
 }
 
 .modal-header > div {
@@ -504,6 +506,36 @@ h2 {
     color:#000000;
 }
 
+#modal-additional-info {
+    font-size: 16px; /* Taille de police des informations */
+    /* font-weight: bold; Met en gras */
+    margin-top: 4px; /* Réduit l'espace entre le titre et les infos */
+    margin-bottom: 0; /* Réduit l'espace sous les infos */
+    line-height: 1.2; /* Ajustez l'interligne pour rapprocher les lignes de texte */
+    font-family: 'Oswald', sans-serif;
+    color:#000000;
+    font-weight: bold;
+}
+
+#modal-rating {
+    font-size: 16px;
+    margin-top: 4px;
+    margin-bottom: 0;
+    line-height: 1.2;
+    font-family: 'Oswald', 'sans-serif';
+    color:#000000;
+    font-weight: bold;
+}
+
+.modal-text {
+    color: black; 
+    font-weight: 100;
+}
+
+.new-line {
+    display: block; /* Force le contenu à démarrer sur une nouvelle ligne */
+}
+
 #modal-image {
     flex-shrink: 0; /* Empêche l'image de rétrécir */
     width: 227px;
@@ -511,11 +543,30 @@ h2 {
     display: inline-block;
 }
 
-
-
 .modal-body {
-    clear: both; /* Efface les floats pour éviter le débordement de contenu */
-    margin-top: 16px;
+    color:#000000; /* Couleur de texte plus douce pour une meilleure lisibilité */
+    line-height: 1.6; /* Interligne pour une meilleure lisibilité du texte */
+    margin-bottom: 5px; /* Espace en dessous de chaque paragraphe */
+    font-family: Oswald;
+}
+
+#modal-summary {
+    margin-top: -30px; /* Espace au-dessus du résumé */
+    font-weight: 100;
+    font-size: 18px;
+    
+    
+}
+
+#modal-cast {
+    display: block; /* Assure que le span prend toute la largeur disponible */
+    margin-top: 5px; /* Espace après "Avec:" */
+    color: #000000; /* Couleur de texte pour les noms du casting */
+    font-size: 12px;
+}
+
+.modal-body strong {
+    color: #000; /* Texte en gras avec couleur plus foncée pour plus d'impact */
 }
 
 .modal-footer {
