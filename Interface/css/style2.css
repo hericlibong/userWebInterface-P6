@@ -1,0 +1,102 @@
+/* Styles généraux et réinitialisations */
+body, h1, h2, h3, p, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Utiliser la typographie et l'espacement de Bootstrap autant que possible */
+h2 {
+    font-size: 24px; /* Taille ajustable selon les besoins */
+    margin-bottom: 0.75rem; /* Espacement cohérent en dessous des titres */
+}
+
+/* Styles du logo */
+.logo-image {
+    width: auto; /* Taille responsive du logo */
+    height: 100px; /* Hauteur fixe ou responsive selon le design */
+    margin-bottom: 20px; /* Espacement sous le logo */
+}
+
+/* Styles des contenus de film */
+.movie-card {
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    transition: transform 0.5s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05); /* Effet de zoom légèrement accru pour visibilité */
+}
+
+.card-img-top {
+    width: 100%; /* Utilisation complète de la largeur de la carte */
+    height: auto; /* Hauteur auto pour maintenir l'aspect ratio */
+    object-fit: cover; /* Couvre la zone sans déformation */
+}
+
+.card-body {
+    padding: 15px; /* Espacement interne pour le texte */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour le texte */
+    color: white; /* Texte en blanc pour contraste */
+}
+
+.card-title {
+    font-size: 18px; /* Taille de police pour les titres dans les cartes */
+    margin-bottom: 5px; /* Petit espacement sous le titre */
+}
+
+.card-text {
+    font-size: 16px; /* Taille de police pour les textes dans les cartes */
+}
+
+/* Boutons personnalisés dans les cartes */
+.btn-primary {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-primary:hover {
+    background-color: #004085;
+    border-color: #003566;
+}
+
+/* Modal custom style */
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.modal-header, .modal-footer {
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6; /* Légère ligne pour séparer le contenu */
+}
+
+.modal-footer {
+    border-top: none;
+    text-align: center; /* Centrage du bouton fermer */
+}
+
+.modal-footer button {
+    padding: 5px 10px; /* Petite taille pour le bouton */
+    background-color: #dc3545; /* Bouton rouge pour fermeture */
+    color: white;
+    border-radius: 5px; /* Boutons légèrement arrondis */
+}
+
+.modal-footer button:hover {
+    background-color: #c82333;
+}
+
+/* Adaptations responsives supplémentaires au besoin */
+@media (max-width: 768px) {
+    .logo-image {
+        height: 60px; /* Plus petit pour les appareils mobiles */
+    }
+
+    .movie-card {
+        padding: 5px; /* Moins de padding dans les cartes sur mobile */
+    }
+}

@@ -1,13 +1,18 @@
-<!DOCTYPE html>
+
+
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Movies</title>
+    
+    <!-- Bootstrap scripts/links -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
@@ -15,13 +20,14 @@
             <div class="logo">
                 <img src="images/logo.jpg" alt="Logo" class="logo-image">
             </div>
+            
         </header>
 
-        <section id="best-movie">
+        <section id="best-movie" class="mt-3">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Meilleur Film</h2>
+                        <h2 class="text-center">Meilleur Film</h2>
                         <div id="best-movie-content" class="d-flex flex-column align-items-center">
                             <!-- Meilleur film contenu dynamique -->
                         </div>
@@ -29,77 +35,52 @@
                 </div>
             </div>
         </section>
-        
 
-        <section id="top-rated-movies">
+        <section id="top-rated-movies" class="mt-4">
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2>Films les mieux notés</h2>
-                        <div id="top-rated-movies-content" class="row">
-                            <!-- Films les mieux notés contenu dynamique -->
-                        </div>
-                    </div>
+                <h2 class="text-center mb-3">Films les mieux notés</h2>
+                <div id="top-rated-movies-content" class="row g-3">
+                    <!-- Films les mieux notés contenu dynamique -->
                 </div>
             </div>
         </section>
-        
 
-        <section id="category1">
+        <section id="category1" class="mt-4">
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 id="category1-title">Catégorie 1</h2>
-                        <div id="category1-content" class="row">
-                            <!-- Catégorie 1 contenu dynamique -->
-                        </div>
-                    </div>
+                <h2 class="text-center mb-3" id="category1-title">Mystery</h2>
+                <div id="category1-content" class="row g-3">
+                    <!-- Contenu dynamique de Catégorie 1 -->
                 </div>
             </div>
         </section>
-        
-        
-        <section id="category2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 id="category2-title">Catégorie 2</h2>
-                        <div id="category2-content" class="row">
-                            <!-- Catégorie 2 contenu dynamique -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        
 
-        <section id="custom-category">
+        <section id="category2" class="mt-4">
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 id="custom-category-title">Catégorie libre</h2>
-                        <div id="category-selector">
-                            <label for="categories">Choisissez une catégorie:</label>
-                            <select id="categories" class="form-select">
-                                <!-- Options de catégorie dynamique -->
-                            </select>
-                        </div>
-                        <div id="custom-category-content" class="row">
-                            <!-- Catégorie libre contenu dynamique -->
-                        </div>
-                    </div>
+                <h2 class="text-center mb-3" id="category2-title">Catégorie 2</h2>
+                <div id="category2-content" class="row g-3">
+                    <!-- Contenu dynamique de Catégorie 2 -->
                 </div>
             </div>
         </section>
-        
+
+        <section id="custom-category" class="mt-4">
+            <div class="container">
+                <h2 class="text-center mb-3" id="custom-category-title">Catégorie libre</h2>
+                <div class="form-group mb-4" id="category-selector">
+                    <label for="categories" class="form-label">Choisissez une catégorie :</label>
+                    <select id="categories" class="form-select">
+                        <!-- Options dynamiques -->
+                    </select>
+                </div>
+                <div id="custom-category-content" class="row g-3">
+                    <!-- Contenu dynamique de Catégorie libre -->
+                </div>
+            </div>
+        </section>
     </div>
 
-
-    <!-- Ajouté à la fin du body dans index.html -->
     <div id="modal" class="modal" style="display: none;">
         <div class="modal-content">
-            <!-- <span class="close-button" onclick="closeModal()">&times;</span> -->
             <div class="modal-header">
                 <div>
                     <h2 id="modal-title">Titre du film</h2>
@@ -116,34 +97,18 @@
             </div>
             <div class="modal-body">
                 <p id="modal-summary"></p>
-                <p><strong>Avec:</strong> 
-                <span id="modal-cast" class="new-line"></span></p>
+                <p class="modal-text" style="font-size: 14px;">
+                    <strong>Avec:</strong> 
+                    <span id="modal-cast" class="new-line"></span>
+                </p>
             </div>
             <div class="modal-footer">
-                <button onclick="closeModal()" style="background-color: red; color: white;">Fermer</button>
+                <button onclick="closeModal()">Fermer</button>
             </div>
         </div>
     </div>
-    
-    
-
-   
-
-
-
-    
-    
-    
-
-    
-    
-    
-    
-
 
     <script src="script.js" defer></script>
     <script src="movieCardCreators.js" defer></script>
-
-
 </body>
 </html>

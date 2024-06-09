@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayBestMovie() {
-        fetchTopMovie('?sort_by=-votes')
+        fetchTopMovie('?sort_by=-imdb_score')
             .then(movie => {
                 const container = document.getElementById('best-movie-content');
                 container.innerHTML = createBestMovieCard(movie);  // Utiliser la fonction createBestMovieCard
@@ -67,11 +67,12 @@ document.addEventListener('DOMContentLoaded', function() {
         displayCategoryMovies(selectedCategory, 'custom-category-content', 'custom-category-title');
     }
 
+    
     function loadCategories() {
         const genreUrl = 'http://127.0.0.1:8000/api/v1/genres/';
         let nextUrl = genreUrl;
         let firstCategory = null;
-
+    
         function fetchNextPage(url) {
             fetch(url)
                 .then(response => {
@@ -87,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         option.value = category.name;
                         option.textContent = category.name;
                         categorySelect.appendChild(option);
-
+    
                         if (!firstCategory) {
                             firstCategory = category.name;
                         }
@@ -95,10 +96,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (data.next) {
                         fetchNextPage(data.next);
                     } else {
-                        categorySelect.addEventListener('change', displayCustomCategoryMovies);
+                        categorySelect.addEventListener('change', function() {
+                            displayCustomCategoryMovies();
+                            updateSelectedOptionStyle(categorySelect);
+                        });
                         if (firstCategory) {
                             categorySelect.value = firstCategory;
                             displayCategoryMovies(firstCategory, 'custom-category-content', 'custom-category-title');
+                            updateSelectedOptionStyle(categorySelect);
                         }
                     }
                 })
@@ -107,11 +112,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     alert('Failed to load categories from the API. Please check the console for more details.');
                 });
         }
-
+    
         fetchNextPage(nextUrl);
     }
-
     
+    function updateSelectedOptionStyle(selectElement) {
+        // Parcours toutes les options et supprime le marqueur
+        for (let option of selectElement.options) {
+            option.text = option.text.replace(' ✅', ''); // Assurez-vous que le caractère utilisé ici ne se trouve pas déjà dans vos noms de catégorie.
+        }
+        // Ajoute un marqueur à l'option sélectionnée
+        selectElement.options[selectElement.selectedIndex].text += ' ✅';
+    }
+    
+    document.getElementById('categories').addEventListener('change', function() {
+        updateSelectedOptionStyle(this);
+    });
+
 
 
     function closeModal() {
