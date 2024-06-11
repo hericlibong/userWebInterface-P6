@@ -353,17 +353,7 @@ h1 {
         margin-top: 0;
     }
 
-    /* #top-rated-movies-content,
-    #category1-content,
-    #category2-content,
-    #custom-category-content {
-        display: flex;
-        flex-wrap: wrap;
-        width: 835px;
-        justify-content: center;
-        align-items: center;
-    } */
-
+   
 
     #top-rated-movies-content, 
     #category1-content, 
@@ -371,8 +361,8 @@ h1 {
     #custom-category-content {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between; /* Ajout de cette ligne */
-        width: 95%; /* Assurez-vous que le conteneur occupe toute la largeur disponible */
+        justify-content: center; /* Ajout de cette ligne */
+        width: 100%; /* Assurez-vous que le conteneur occupe toute la largeur disponible */
     }
 
 
@@ -386,7 +376,7 @@ h1 {
         overflow: hidden; /* Cache l'excédent de l'image pour éviter la déformation */
         margin: 15px; /* Ajuste l'espace entre les cartes */
         position: relative; /* Nécessaire pour positionner les éléments à l'intérieur */
-        margin-left: 10px;
+       
     }
 
     #top-rated-movies .movie-card img,
@@ -444,18 +434,37 @@ h1 {
     #category1 .movie-card .btn-primary,
     #category2 .movie-card .btn-primary,
     #custom-category .movie-card .btn-primary {
-        background-color: black;
+        background-color:#2D2C2C;
         border: none;
         color: white;
         align-self: flex-end;
+       border-radius: 25%;
+       gap: 10px;
+       padding:2px, 4px, 2px, 4px;
     }
 
     #top-rated-movies .movie-card .btn-primary:hover,
     #category1 .movie-card .btn-primary:hover,
     #category2 .movie-card .btn-primary:hover,
     #custom-category .movie-card .btn-primary:hover {
-        background-color: #333;
+        background-color: #0d0d0d;
     }
+
+    #top-rated-movies h2,
+    #category1 h2,
+    #category2 h2,
+    #custom-category h2 {
+        margin-left: 1.7em; /* Aligne le titre sur la première vignette */
+        font-family: 'Oswald', sans-serif;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 71.14px;
+        text-align: left;
+        color: #000000;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
 
     .modal {
         position: fixed;
