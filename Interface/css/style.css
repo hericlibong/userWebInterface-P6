@@ -37,12 +37,12 @@ h1 {
     color: #000000;
 }
 
-h2 {
-    font-family: 'Oswald', sans-serif;
-    text-align: center;
-}
 
-#top-rated-movies-content, #category1-content, #category2-content, #custom-category-content {
+
+#top-rated-movies-content, 
+#category1-content, 
+#category2-content, 
+#custom-category-content {
     display: flex;
     flex-wrap: wrap;
 }
@@ -75,18 +75,154 @@ h2 {
     .card-body {
         text-align: center;
     }
+
+    h2 {
+    font-family: 'Oswald', sans-serif;
+    text-align: left;
+}
+
 }
 
 /* Media Queries pour Tablette */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .logo-image {
-        width: 50%;
+        width: 100%;
     }
 
+    /* #best-movie-content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        height: auto;
+        border: 6px solid #333;
+        margin: 0 auto;
+        padding: 1em;
+    } */
+
+
+    /* #best-movie-content {
+        width: 100%;
+        height: auto;
+        border: 6px solid #333;
+        margin: 0 auto;
+        padding: 1em;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    } */
+
     #best-movie-content {
-        flex-direction: column;
-        align-items: center;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
+        border: 6px solid #333;
+        padding: 1em;
     }
+
+    #best-movie-content .movie-card {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        background-color: #fff;
+        border: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    
+
+    #best-movie-content .card-img-top {
+        max-width: 168px;
+        height: auto;
+        margin-right: 1em;
+    }
+    
+
+    #best-movie-content .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
+        height: 60%;
+        margin-left: 20em;
+        margin-top: -12em;
+        padding: 5px 0px 5px 0px;
+       
+    }
+
+    
+
+
+    #best-movie-content .card-title {
+        font-family: Oswald;
+        font-size: 30px;
+        font-weight: 600;
+        color: #333;
+        text-align: left;
+        width: auto;
+        margin-bottom: 0.5em;
+    }
+
+
+
+    #best-movie-content .card-text {
+        flex-grow: 1;
+        margin-bottom: 1em;
+        font-family: Oswald;
+        font-size: 16px;
+        font-weight: 200;
+        line-height: 1.5;
+        text-align: left;
+        width: auto;
+    }
+
+    /* #best-movie-content .card-text {
+        flex-grow: 1;
+        margin-bottom: 1em;
+    } */
+
+    #best-movie-content .btn {
+        align-self: flex-end;
+        background-color: #dc3545;
+        border-color: #dc3545;
+        color: #fff;
+        border-radius: 25px;
+        padding: 10px 20px;
+        text-align: center;
+        margin-top: 0.5em; 
+    }
+
+    #best-movie-content .btn:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+    }
+
+    h2 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: left;
+        margin: 10px 0;
+        color: #000000;
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 0px solid rgba(0,0,0,.125);
+        border-radius: .25rem;
+      }
+
+
 
     .movie-card {
         width: 48%;
@@ -98,9 +234,9 @@ h2 {
         height: auto;
     }
 
-    .card-body {
+    /* .card-body {
         text-align: center;
-    }
+    } */
 }
 
 /* Media Queries pour Desktop */
@@ -125,8 +261,9 @@ h2 {
         font-weight: 600;
         line-height: 71.14px;
         text-align: left;
-        margin: 0 0 20px 0;
+        margin: 10px 0 20px 0;
         color: #000000;
+        margin-left: 1.1em;
     }
 
     #best-movie-content {
@@ -139,10 +276,6 @@ h2 {
         border: 6px solid #333;
         opacity: 0px;
         margin-left: 4em;
-    }
-
-    #best-movie h2 {
-        margin-left: 1.2em;
     }
 
     #best-movie-content .card-img-top {
@@ -220,7 +353,7 @@ h2 {
         margin-top: 0;
     }
 
-    #top-rated-movies-content,
+    /* #top-rated-movies-content,
     #category1-content,
     #category2-content,
     #custom-category-content {
@@ -229,33 +362,50 @@ h2 {
         width: 835px;
         justify-content: center;
         align-items: center;
+    } */
+
+
+    #top-rated-movies-content, 
+    #category1-content, 
+    #category2-content, 
+    #custom-category-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* Ajout de cette ligne */
+        width: 95%; /* Assurez-vous que le conteneur occupe toute la largeur disponible */
     }
+
+
 
     #top-rated-movies .movie-card,
     #category1 .movie-card,
     #category2 .movie-card,
     #custom-category .movie-card {
+        width: 252px;
+        height: 247px;
+        overflow: hidden; /* Cache l'excédent de l'image pour éviter la déformation */
+        margin: 15px; /* Ajuste l'espace entre les cartes */
+        position: relative; /* Nécessaire pour positionner les éléments à l'intérieur */
         margin-left: 10px;
-        margin: 30px;
     }
 
-    #top-rated-movies .movie-card .card,
-    #category1 .movie-card .card,
-    #category2 .movie-card .card,
-    #custom-category .movie-card .card {
-        position: relative;
-        overflow: hidden;
-    }
-
-    #top-rated-movies .movie-card .card img,
-    #category1 .movie-card .card img,
-    #category2 .movie-card .card img,
-    #custom-category .movie-card .card img {
-        transition: transform .5s ease;
+    #top-rated-movies .movie-card img,
+    #category1 .movie-card img,
+    #category2 .movie-card img,
+    #custom-category .movie-card img {
         width: 100%;
-        object-fit: cover;
+        height: 100%;
+        object-fit: cover; /* Crop l'image pour qu'elle remplisse le conteneur sans déformation */
+        transition: transform 0.5s ease; /* Effet de transition pour le zoom */
     }
 
+    #top-rated-movies .movie-card:hover img,
+    #category1 .movie-card:hover img,
+    #category2 .movie-card:hover img,
+    #custom-category .movie-card:hover img {
+        transform: scale(1.1); /* Zoom au survol */
+    }
+    
     #top-rated-movies .movie-card .card-body,
     #category1 .movie-card .card-body,
     #category2 .movie-card .card-body,

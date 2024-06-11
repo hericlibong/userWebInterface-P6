@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayBestMovie() {
-        fetchTopMovie('?sort_by=-imdb_score')
+        fetchTopMovie('?sort_by=-votes')
             .then(movie => {
                 const container = document.getElementById('best-movie-content');
                 container.innerHTML = createBestMovieCard(movie);  // Utiliser la fonction createBestMovieCard
