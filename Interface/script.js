@@ -1,8 +1,40 @@
+/**
+ * Permet d'afficher ou de masquer des films supplémentaires dans une section.
+ * @param {string} sectionId - L'ID de la section contenant les films.
+ * @param {string} buttonId - L'ID du bouton qui déclenche l'affichage/masquage.
+ */
+function toggleMovies(sectionId, buttonId) {
+    const section = document.getElementById(sectionId);
+    const button = document.getElementById(buttonId);
+    const extraMovies = section.querySelectorAll('.movie-card.extra');
 
+    button.addEventListener('click', function() {
+        extraMovies.forEach(movie => {
+            if (movie.style.display === 'none' || movie.style.display === '') {
+                movie.style.display = 'block';
+            } else {
+                movie.style.display = 'none';
+            }
+        });
+
+        // Changer le texte du bouton en fonction de l'état
+        if (button.textContent === 'Voir plus') {
+            button.textContent = 'Voir moins';
+        } else {
+            button.textContent = 'Voir plus';
+        }
+    });
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     const baseUrl = 'http://127.0.0.1:8000/api/v1/titles/';
 
+
+        /**
+     * Récupère les détails du film ayant le score IMDb le plus élevé selon les paramètres de requête.
+     * @param {string} queryParams - Les paramètres de requête pour filtrer les films.
+     * @returns {Promise<object>} - Une promesse qui résout avec les détails du film.
+     */
     function fetchTopMovie(queryParams) {
         return fetch(`${baseUrl}${queryParams}`)
             .then(response => response.json())
@@ -11,6 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Error fetching top movie:', error));
     }
 
+    
+    /**
+ * Récupère une liste de films selon des critères de recherche avec gestion de pagination.
+ * @param {string} queryParams - Les paramètres de requête pour filtrer les films.
+ * @param {number} limit - Le nombre maximal de films à récupérer.
+ * @returns {Promise<object[]>} - Une promesse qui résout avec une liste de films.
+ */
     function fetchMovies(queryParams, limit = 6) {
         let collectedMovies = [];
         let currentPage = 1;
@@ -32,11 +71,24 @@ document.addEventListener('DOMContentLoaded', function() {
         return fetchPage();
     }
 
+    /**
+     * Affiche les cartes de films dans un conteneur spécifié.
+     * @param {object[]} movies - La liste des films à afficher.
+     * @param {string} containerId - L'ID du conteneur où afficher les films.
+     */
     function displayMovies(movies, containerId) {
         const container = document.getElementById(containerId);
-        container.innerHTML = movies.map(createMovieCard).join('');
+        const mediaQuery = window.matchMedia('(max-width: 767.98px)');
+        const initialDisplayCount = mediaQuery.matches ? 2 : 4; // 2 films pour mobile, 4 films pour tablette
+    
+        container.innerHTML = movies.map((movie, index) => 
+            `<div class="movie-card ${index >= initialDisplayCount ? 'extra' : ''}">` + createMovieCard(movie) + `</div>`
+        ).join('');
     }
 
+        /**
+     * Affiche le film ayant le score IMDb le plus élevé dans la section Meilleur Film.
+     */
     function displayBestMovie() {
         fetchTopMovie('?sort_by=-votes')
             .then(movie => {
@@ -45,34 +97,55 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
+        /**
+     * Affiche les films les mieux notés dans la section correspondante.
+     */
     function displayTopRatedMovies() {
         fetchMovies('?sort_by=-imdb_score', 6)
             .then(movies => {
                 displayMovies(movies, 'top-rated-movies-content');
+                toggleMovies('top-rated-movies-content', 'toggle-top-rated');
             })
             .catch(error => console.error('Error fetching movies:', error));
     }
 
+        /**
+     * Affiche les films d'une catégorie spécifique dans une section correspondante.
+     * @param {string} category - Le nom de la catégorie de films.
+     * @param {string} containerId - L'ID du conteneur où afficher les films.
+     * @param {string} titleId - L'ID de l'élément où afficher le titre de la catégorie.
+     */
     function displayCategoryMovies(category, containerId, titleId) {
         fetchMovies(`?genre=${category}&sort_by=-imdb_score`, 6)
             .then(movies => {
                 displayMovies(movies, containerId);
                 document.getElementById(titleId).textContent = category;
+                toggleMovies(containerId, 'toggle-' + containerId);
             })
             .catch(error => console.error('Error fetching category movies:', error));
     }
 
+        /**
+     * Affiche les films de la catégorie sélectionnée par l'utilisateur dans la section Catégorie libre.
+     */
     function displayCustomCategoryMovies() {
         const selectedCategory = document.getElementById('categories').value;
-        displayCategoryMovies(selectedCategory, 'custom-category-content', 'custom-category-title');
+        fetchMovies(`?genre=${selectedCategory}&sort_by=-imdb_score`, 6)
+            .then(movies => {
+                displayMovies(movies, 'custom-category-content');
+                toggleMovies('custom-category-content', 'toggle-custom-category-content');
+            })
+            .catch(error => console.error('Error fetching custom category movies:', error));
     }
 
-    
+        /**
+     * Charge toutes les catégories disponibles dans un menu déroulant et affiche les films de la première catégorie par défaut.
+     */
     function loadCategories() {
         const genreUrl = 'http://127.0.0.1:8000/api/v1/genres/';
         let nextUrl = genreUrl;
         let firstCategory = null;
-    
+
         function fetchNextPage(url) {
             fetch(url)
                 .then(response => {
@@ -88,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         option.value = category.name;
                         option.textContent = category.name;
                         categorySelect.appendChild(option);
-    
+
                         if (!firstCategory) {
                             firstCategory = category.name;
                         }
@@ -102,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         });
                         if (firstCategory) {
                             categorySelect.value = firstCategory;
-                            displayCategoryMovies(firstCategory, 'custom-category-content', 'custom-category-title');
+                            displayCustomCategoryMovies();
                             updateSelectedOptionStyle(categorySelect);
                         }
                     }
@@ -112,10 +185,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     alert('Failed to load categories from the API. Please check the console for more details.');
                 });
         }
-    
+
         fetchNextPage(nextUrl);
     }
-    
+
+        /**
+     * Met à jour le style de l'option sélectionnée dans un menu déroulant.
+     * @param {HTMLSelectElement} selectElement - L'élément select dont le style des options doit être mis à jour.
+     */
     function updateSelectedOptionStyle(selectElement) {
         // Parcours toutes les options et supprime le marqueur
         for (let option of selectElement.options) {
@@ -124,17 +201,24 @@ document.addEventListener('DOMContentLoaded', function() {
         // Ajoute un marqueur à l'option sélectionnée
         selectElement.options[selectElement.selectedIndex].text += ' ✅';
     }
-    
+
     document.getElementById('categories').addEventListener('change', function() {
         updateSelectedOptionStyle(this);
     });
 
 
-
+        /**
+     * Ferme la fenêtre modale.
+     */
     function closeModal() {
         document.getElementById('modal').style.display = 'none';
     }
 
+
+        /**
+     * Affiche les détails d'un film dans une fenêtre modale.
+     * @param {string} movieId - L'ID du film dont les détails doivent être affichés.
+     */
     window.showModal = function(movieId) {
         fetch(`${baseUrl}${movieId}`)
             .then(response => response.json())
@@ -155,15 +239,12 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Error fetching movie details:', error));
     };
 
-    // Assurez-vous que le bouton de fermeture est bien attaché après que le DOM est chargé
     document.querySelectorAll('.close-button').forEach(button => {
         button.addEventListener('click', closeModal);
     });
 
-    // Attach event listener to 'Fermer' button in the modal footer if it's not closing
+    // Initialiser l'affichage des sections
     document.querySelector('.modal-footer button').addEventListener('click', closeModal);
-
-    
 
     displayBestMovie();
     displayTopRatedMovies();
@@ -171,7 +252,3 @@ document.addEventListener('DOMContentLoaded', function() {
     displayCategoryMovies('Thriller', 'category2-content', 'category2-title');
     loadCategories();
 });
-
-
-
-

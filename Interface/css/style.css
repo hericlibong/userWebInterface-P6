@@ -57,142 +57,568 @@ h1 {
         width: 100%;
     }
 
+    h2 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 71.14px;
+        text-align: left;
+        margin: 10px 0 20px 0;
+        color: #000000;
+        margin-left: 1.1em;
+    }
+
     #best-movie-content {
+        display: flex;
+        width: 329px;
+        height: 463px;
+        border: 6px solid #333;
         flex-direction: column;
         align-items: center;
+       
     }
 
-    .movie-card {
-        width: 100%;
-        margin-bottom: 20px;
-    }
+   
 
-    .card-img-top {
-        width: 100%;
-        height: auto;
-    }
-
-    .card-body {
-        text-align: center;
-    }
-
-    h2 {
-    font-family: 'Oswald', sans-serif;
-    text-align: left;
-}
-
-}
-
-/* Media Queries pour Tablette */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .logo-image {
-        width: 100%;
-    }
-
-    /* #best-movie-content {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        width: 100%;
-        height: auto;
-        border: 6px solid #333;
-        margin: 0 auto;
-        padding: 1em;
-    } */
-
-
-    /* #best-movie-content {
-        width: 100%;
-        height: auto;
-        border: 6px solid #333;
-        margin: 0 auto;
-        padding: 1em;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-    } */
-
-    #best-movie-content {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-        width: 100%;
-        height: auto;
-        border: 6px solid #333;
-        padding: 1em;
+    #best-movie-content .card-img-top {
+        position: absolute;
+        width: 298px;
+        height: 350px;
+       
     }
 
     #best-movie-content .movie-card {
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
+        align-items: center;
         background-color: #fff;
         border: none;
         padding: 0;
         width: 100%;
     }
 
-    
-
-    #best-movie-content .card-img-top {
-        max-width: 168px;
-        height: auto;
-        margin-right: 1em;
+    #best-movie-content .card {
+        display: flex;
+        flex-direction:column;
+        border: none;
+        width: 100%;
     }
-    
 
     #best-movie-content .card-body {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start; 
-        height: 60%;
-        margin-left: 20em;
-        margin-top: -12em;
-        padding: 5px 0px 5px 0px;
-       
+        justify-content: center;
+        padding: 5px 5px 5px 5px;
+        margin-top: 10em;
     }
-
-    
-
 
     #best-movie-content .card-title {
         font-family: Oswald;
-        font-size: 30px;
+        font-size: 40px;
         font-weight: 600;
+        line-height: 44.3px;
         color: #333;
         text-align: left;
-        width: auto;
-        margin-bottom: 0.5em;
+        width: 345px;
+        height: 44px;
     }
-
-
 
     #best-movie-content .card-text {
         flex-grow: 1;
-        margin-bottom: 1em;
+        margin-bottom: 10px;
         font-family: Oswald;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 200;
-        line-height: 1.5;
+        line-height: 30px;
         text-align: left;
-        width: auto;
     }
-
-    /* #best-movie-content .card-text {
-        flex-grow: 1;
-        margin-bottom: 1em;
-    } */
 
     #best-movie-content .btn {
         align-self: flex-end;
         background-color: #dc3545;
         border-color: #dc3545;
         color: #fff;
+        margin-right: 1rem;
         border-radius: 25px;
         padding: 10px 20px;
+        width: 123px;
+        height: 49px;
+        margin-top: -1.5em;
+    }
+
+    #best-movie-content .btn:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+    }
+    #top-rated-movies-content, 
+    #category1-content, 
+    #category2-content, 
+    #custom-category-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Ajout de cette ligne */
+        width: 100%; /* Assurez-vous que le conteneur occupe toute la largeur disponible */
+    }
+
+
+
+    #top-rated-movies .movie-card,
+    #category1 .movie-card,
+    #category2 .movie-card,
+    #custom-category .movie-card {
+        width: 295px;
+        height: 286px;
+        overflow: hidden; /* Cache l'excédent de l'image pour éviter la déformation */
+        margin: 15px; /* Ajuste l'espace entre les cartes */
+        position: relative; /* Nécessaire pour positionner les éléments à l'intérieur */
+       
+    }
+
+    #top-rated-movies .movie-card img,
+    #category1 .movie-card img,
+    #category2 .movie-card img,
+    #custom-category .movie-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Crop l'image pour qu'elle remplisse le conteneur sans déformation */
+        transition: transform 0.5s ease; /* Effet de transition pour le zoom */
+    }
+
+    #top-rated-movies .movie-card:hover img,
+    #category1 .movie-card:hover img,
+    #category2 .movie-card:hover img,
+    #custom-category .movie-card:hover img {
+        transform: scale(1.1); /* Zoom au survol */
+    }
+    
+    #top-rated-movies .movie-card .card-body,
+    #category1 .movie-card .card-body,
+    #category2 .movie-card .card-body,
+    #custom-category .movie-card .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: absolute;
+        top: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        width: 100%;
+        padding: 10px;
+        transition: background-color .5s ease;
+    }
+
+    #top-rated-movies .movie-card .card-body:hover,
+    #category1 .movie-card .card-body:hover,
+    #category2 .movie-card .card-body:hover,
+    #custom-category .movie-card .card-body:hover {
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    #top-rated-movies .movie-card .card-title,
+    #category1 .movie-card .card-title,
+    #category2 .movie-card .card-title,
+    #custom-category .movie-card .card-title {
+        margin-bottom: 5px;
+        font-weight: bold;
+        align-self: flex-start;
+        font-size: 19px;
+    }
+
+    #top-rated-movies .movie-card .btn-primary,
+    #category1 .movie-card .btn-primary,
+    #category2 .movie-card .btn-primary,
+    #custom-category .movie-card .btn-primary {
+        background-color:#2D2C2C;
+        border: none;
+        color: white;
+        align-self: flex-end;
+       border-radius: 25%;
+       gap: 10px;
+       padding:2px, 4px, 2px, 4px;
+    }
+
+    #top-rated-movies .movie-card .btn-primary:hover,
+    #category1 .movie-card .btn-primary:hover,
+    #category2 .movie-card .btn-primary:hover,
+    #custom-category .movie-card .btn-primary:hover {
+        background-color: #0d0d0d;
+    }
+
+    #top-rated-movies h2,
+    #category1 h2,
+    #category2 h2{
+        margin-left: 1.7em; /* Aligne le titre sur la première vignette */
+        font-family: 'Oswald', sans-serif;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 71.14px;
+        text-align: left;
+        color: #000000;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+
+    
+    .modal {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    /* .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #090808;
+        width: 50%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    } */
+
+    .modal-content {
+        width: 506px;
+        height: 1684px;
+        margin: 50px auto; /* Centrer le modal horizontalement */
+        padding: 20px;
+        border: 6px solid #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        position: relative;
+       
+    }
+
+
+    .modal-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: start;
+        margin-bottom: 20px;
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .modal-header > div {
+        flex-grow: 1;
+    }
+
+    #modal-title {
+        margin: 0;
+        flex-grow: 1;
+        margin-right: 20px;
+        font-size: 40px;
+        color: #000000;
+        line-height: 1.2;
+    }
+
+    #modal-info {
+        font-size: 16px;
+        margin-top: 4px;
+        margin-bottom: 0;
+        line-height: 1.2;
+        font-family: 'Oswald', sans-serif;
+        color: #000000;
+    }
+
+    #modal-additional-info {
+        font-size: 16px;
+        margin-top: 4px;
+        margin-bottom: 0;
+        line-height: 1.2;
+        font-family: 'Oswald', sans-serif;
+        color: #000000;
+        font-weight: bold;
+    }
+
+    #modal-rating {
+        font-size: 16px;
+        margin-top: 4px;
+        margin-bottom: 0;
+        line-height: 1.2;
+        font-family: 'Oswald', 'sans-serif';
+        color: #000000;
+        font-weight: bold;
+    }
+
+    .modal-text {
+        color: black;
+        font-weight: 100;
+    }
+
+    .new-line {
+        display: block;
+    }
+
+    #modal-image {
+        flex-shrink: 0;
+        width: 227px;
+        height: auto;
+        display: inline-block;
+    }
+
+    .modal-body {
+        color: #000000;
+        line-height: 1.6;
+        margin-bottom: 5px;
+        font-family: Oswald;
+    }
+
+    #modal-summary {
+        margin-top: -30px;
+        font-weight: 100;
+        font-size: 18px;
+    }
+
+    #modal-cast {
+        display: block;
+        margin-top: -2px;
+        color: #000000;
+        font-size: 12px;
+    }
+
+    .modal-body strong {
+        color: #000;
+    }
+
+    .modal-footer {
         text-align: center;
-        margin-top: 0.5em; 
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-footer button {
+        padding: 10px 25px;
+        font-size: 16px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        background-color: red;
+        color: white;
+        outline: none;
+        transition: background-color 0.3s, transform 0.2s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-left: 0px;
+    }
+
+    .modal-footer button:hover {
+        background-color: #e60000;
+        transform: scale(1.05);
+    }
+
+    #custom-category .d-flex {
+        display: flex;
+        align-items: center;
+        margin-left: 4em; /* Aligne l'ensemble avec les vignettes */
+    }
+
+    #custom-category h2 {
+        margin-left:0em;
+        font-family: 'Oswald', sans-serif;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 71.14px;
+        text-align: left;
+        color: #000000;
+    }
+
+    #category-selector {
+        width: 20%;
+        margin: 20px auto;
+        margin-left: 1em;
+    }
+
+    #categories {
+        width: 100%;
+        padding: 8px 12px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: white;
+        cursor: pointer;
+        font-size: 16px;
+        appearance: none;
+        position: relative;
+        outline: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M2.6 4.5H9.4L6 8.1L2.6 4.5Z" fill="%23333"/%3E%3C/svg%3E');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 24px 24px;
+    }
+
+
+    #categories:hover {
+        border-color: #888;
+    }
+
+    #categories:focus {
+        border-color: #0056b3;
+    }
+
+    .modal p {
+        margin: 4px 0;
+        font-size: 16px;
+    }
+
+    .custom-select {
+        position: relative;
+        width: 100%;
+    }
+
+    .selected-option {
+        padding: 10px;
+        background-color: #f8f8f8;
+        border: 1px solid #ccc;
+        cursor: pointer;
+    }
+
+    .options-container {
+        display: block;
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        border: 1px solid #ccc;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .option {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+    }
+
+    .option:last-child {
+        border-bottom: none;
+    }
+
+    .option:hover {
+        background-color: #f1f1f1;
+    }
+
+    /* Styles pour masquer les films supplémentaires */
+.movie-card.extra {
+    display: none;
+}
+
+/* Styles pour le bouton */
+.toggle-btn {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+    h2 {
+    font-family: 'Oswald', sans-serif;
+    text-align: left;
+}
+
+
+}
+
+/* Media Queries pour Tablette */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .logo-image {
+        width: 90%;
+        align-items: center;
+    }
+
+    h2 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 71.14px;
+        text-align: left;
+        margin: 10px 0 20px 0;
+        color: #000000;
+        margin-left: 1.1em;
+    }
+
+    #best-movie-content {
+        display: flex;
+        width: 649px;
+        height: 312px;
+        border: 6px solid #333;
+        padding: 1em;
+        margin-left: 0em;
+    }
+
+    #best-movie-content .card-img-top {
+        width: 181px;
+        height: 267px;
+        margin-left: -0.5em;
+        margin-top: 0.5em;
+        padding: 4px 4px 4px 4px;
+    }
+
+    #best-movie-content .movie-card {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    #best-movie-content .card {
+        display: flex;
+        flex-direction: row;
+        border: none;
+        width: 100%;
+    }
+
+    #best-movie-content .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px 5px 5px 5px;
+    }
+
+    #best-movie-content .card-title {
+        font-family: Oswald;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 44.3px;
+        color: #333;
+        text-align: left;
+        width: 345px;
+        height: 44px;
+    }
+
+    #best-movie-content .card-text {
+        flex-grow: 1;
+        margin-bottom: 10px;
+        font-family: Oswald;
+        font-size: 18px;
+        font-weight: 200;
+        line-height: 30px;
+        text-align: left;
+    }
+
+    #best-movie-content .btn {
+        align-self: flex-end;
+        background-color: #dc3545;
+        border-color: #dc3545;
+        color: #fff;
+        margin-right: 1rem;
+        border-radius: 25px;
+        padding: 10px 20px;
+        width: 123px;
+        height: 49px;
+        margin-top: -1.5em;
     }
 
     #best-movie-content .btn:hover {
@@ -200,44 +626,377 @@ h1 {
         border-color: #bd2130;
     }
 
-    h2 {
-        font-family: 'Oswald', sans-serif;
-        font-size: 40px;
-        font-weight: 600;
-        line-height: 1.2;
-        text-align: left;
-        margin: 10px 0;
-        color: #000000;
+    .section h2 {
+        margin-top: 0;
     }
 
-    .card {
-        position: relative;
+    #top-rated-movies-content, 
+    #category1-content, 
+    #category2-content, 
+    #custom-category-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Ajout de cette ligne */
+        width: 100%; /* Assurez-vous que le conteneur occupe toute la largeur disponible */
+    }
+
+
+
+    #top-rated-movies .movie-card,
+    #category1 .movie-card,
+    #category2 .movie-card,
+    #custom-category .movie-card {
+        width: 295px;
+        height: 286px;
+        overflow: hidden; /* Cache l'excédent de l'image pour éviter la déformation */
+        margin: 15px; /* Ajuste l'espace entre les cartes */
+        position: relative; /* Nécessaire pour positionner les éléments à l'intérieur */
+       
+    }
+
+    #top-rated-movies .movie-card img,
+    #category1 .movie-card img,
+    #category2 .movie-card img,
+    #custom-category .movie-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Crop l'image pour qu'elle remplisse le conteneur sans déformation */
+        transition: transform 0.5s ease; /* Effet de transition pour le zoom */
+    }
+
+    #top-rated-movies .movie-card:hover img,
+    #category1 .movie-card:hover img,
+    #category2 .movie-card:hover img,
+    #custom-category .movie-card:hover img {
+        transform: scale(1.1); /* Zoom au survol */
+    }
+    
+    #top-rated-movies .movie-card .card-body,
+    #category1 .movie-card .card-body,
+    #category2 .movie-card .card-body,
+    #custom-category .movie-card .card-body {
         display: flex;
         flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        background-clip: border-box;
-        border: 0px solid rgba(0,0,0,.125);
-        border-radius: .25rem;
-      }
+        justify-content: space-between;
+        align-items: flex-start;
+        position: absolute;
+        top: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        width: 100%;
+        padding: 10px;
+        transition: background-color .5s ease;
+    }
 
+    #top-rated-movies .movie-card .card-body:hover,
+    #category1 .movie-card .card-body:hover,
+    #category2 .movie-card .card-body:hover,
+    #custom-category .movie-card .card-body:hover {
+        background: rgba(0, 0, 0, 0.7);
+    }
 
+    #top-rated-movies .movie-card .card-title,
+    #category1 .movie-card .card-title,
+    #category2 .movie-card .card-title,
+    #custom-category .movie-card .card-title {
+        margin-bottom: 5px;
+        font-weight: bold;
+        align-self: flex-start;
+        font-size: 19px;
+    }
 
-    .movie-card {
-        width: 48%;
+    #top-rated-movies .movie-card .btn-primary,
+    #category1 .movie-card .btn-primary,
+    #category2 .movie-card .btn-primary,
+    #custom-category .movie-card .btn-primary {
+        background-color:#2D2C2C;
+        border: none;
+        color: white;
+        align-self: flex-end;
+       border-radius: 25%;
+       gap: 10px;
+       padding:2px, 4px, 2px, 4px;
+    }
+
+    #top-rated-movies .movie-card .btn-primary:hover,
+    #category1 .movie-card .btn-primary:hover,
+    #category2 .movie-card .btn-primary:hover,
+    #custom-category .movie-card .btn-primary:hover {
+        background-color: #0d0d0d;
+    }
+
+    #top-rated-movies h2,
+    #category1 h2,
+    #category2 h2{
+        margin-left: 1.7em; /* Aligne le titre sur la première vignette */
+        font-family: 'Oswald', sans-serif;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 71.14px;
+        text-align: left;
+        color: #000000;
+        margin-top: 10px;
         margin-bottom: 20px;
     }
 
-    .card-img-top {
+
+    
+    .modal {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
         width: 100%;
-        height: auto;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
     }
 
-    /* .card-body {
+
+    .modal-content {
+        width: 506px;
+        height: 1684px;
+        margin: 50px auto; /* Centrer le modal horizontalement */
+        padding: 20px;
+        border: 6px solid #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        position: relative;
+       
+    }
+
+
+    .modal-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: start;
+        margin-bottom: 20px;
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .modal-header > div {
+        flex-grow: 1;
+    }
+
+    #modal-title {
+        margin: 0;
+        flex-grow: 1;
+        margin-right: 20px;
+        font-size: 40px;
+        color: #000000;
+        line-height: 1.2;
+    }
+
+    #modal-info {
+        font-size: 16px;
+        margin-top: 4px;
+        margin-bottom: 0;
+        line-height: 1.2;
+        font-family: 'Oswald', sans-serif;
+        color: #000000;
+    }
+
+    #modal-additional-info {
+        font-size: 16px;
+        margin-top: 4px;
+        margin-bottom: 0;
+        line-height: 1.2;
+        font-family: 'Oswald', sans-serif;
+        color: #000000;
+        font-weight: bold;
+    }
+
+    #modal-rating {
+        font-size: 16px;
+        margin-top: 4px;
+        margin-bottom: 0;
+        line-height: 1.2;
+        font-family: 'Oswald', 'sans-serif';
+        color: #000000;
+        font-weight: bold;
+    }
+
+    .modal-text {
+        color: black;
+        font-weight: 100;
+    }
+
+    .new-line {
+        display: block;
+    }
+
+    #modal-image {
+        flex-shrink: 0;
+        width: 227px;
+        height: auto;
+        display: inline-block;
+    }
+
+    .modal-body {
+        color: #000000;
+        line-height: 1.6;
+        margin-bottom: 5px;
+        font-family: Oswald;
+    }
+
+    #modal-summary {
+        margin-top: -30px;
+        font-weight: 100;
+        font-size: 18px;
+    }
+
+    #modal-cast {
+        display: block;
+        margin-top: -2px;
+        color: #000000;
+        font-size: 12px;
+    }
+
+    .modal-body strong {
+        color: #000;
+    }
+
+    .modal-footer {
         text-align: center;
-    } */
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-footer button {
+        padding: 10px 25px;
+        font-size: 16px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        background-color: red;
+        color: white;
+        outline: none;
+        transition: background-color 0.3s, transform 0.2s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-left: 0px;
+    }
+
+    .modal-footer button:hover {
+        background-color: #e60000;
+        transform: scale(1.05);
+    }
+
+    #custom-category .d-flex {
+        display: flex;
+        align-items: center;
+        margin-left: 4em; /* Aligne l'ensemble avec les vignettes */
+    }
+
+    #custom-category h2 {
+        margin-left:0em;
+        font-family: 'Oswald', sans-serif;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 71.14px;
+        text-align: left;
+        color: #000000;
+    }
+
+    #category-selector {
+        width: 20%;
+        margin: 20px auto;
+        margin-left: 1em;
+    }
+
+    #categories {
+        width: 100%;
+        padding: 8px 12px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: white;
+        cursor: pointer;
+        font-size: 16px;
+        appearance: none;
+        position: relative;
+        outline: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M2.6 4.5H9.4L6 8.1L2.6 4.5Z" fill="%23333"/%3E%3C/svg%3E');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 24px 24px;
+    }
+
+
+    #categories:hover {
+        border-color: #888;
+    }
+
+    #categories:focus {
+        border-color: #0056b3;
+    }
+
+    .modal p {
+        margin: 4px 0;
+        font-size: 16px;
+    }
+
+    .custom-select {
+        position: relative;
+        width: 100%;
+    }
+
+    .selected-option {
+        padding: 10px;
+        background-color: #f8f8f8;
+        border: 1px solid #ccc;
+        cursor: pointer;
+    }
+
+    .options-container {
+        display: block;
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        border: 1px solid #ccc;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .option {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+    }
+
+    .option:last-child {
+        border-bottom: none;
+    }
+
+    .option:hover {
+        background-color: #f1f1f1;
+    }
+
+    /* Styles pour masquer les films supplémentaires */
+.movie-card.extra {
+    display: none;
 }
+
+/* Styles pour le bouton */
+.toggle-btn {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+}
+   
+
 
 /* Media Queries pour Desktop */
 @media (min-width: 992px) {
@@ -353,8 +1112,6 @@ h1 {
         margin-top: 0;
     }
 
-   
-
     #top-rated-movies-content, 
     #category1-content, 
     #category2-content, 
@@ -409,7 +1166,7 @@ h1 {
         background: rgba(0, 0, 0, 0.5);
         color: white;
         width: 100%;
-        padding: 10px;
+        padding: 18px;
         transition: background-color .5s ease;
     }
 
@@ -438,9 +1195,11 @@ h1 {
         border: none;
         color: white;
         align-self: flex-end;
-       border-radius: 25%;
-       gap: 10px;
-       padding:2px, 4px, 2px, 4px;
+       border-radius: 20px 20px 20px 20px;
+       padding:5px 20px;
+       position: relative;
+       left: -25px;
+       margin-top: 1.5em;
     }
 
     #top-rated-movies .movie-card .btn-primary:hover,
@@ -452,8 +1211,7 @@ h1 {
 
     #top-rated-movies h2,
     #category1 h2,
-    #category2 h2,
-    #custom-category h2 {
+    #category2 h2{
         margin-left: 1.7em; /* Aligne le titre sur la première vignette */
         font-family: 'Oswald', sans-serif;
         font-size: 48px;
@@ -604,9 +1362,26 @@ h1 {
         transform: scale(1.05);
     }
 
+    #custom-category .d-flex {
+        display: flex;
+        align-items: center;
+        margin-left: 4em; /* Aligne l'ensemble avec les vignettes */
+    }
+
+    #custom-category h2 {
+        margin-left:0em;
+        font-family: 'Oswald', sans-serif;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 71.14px;
+        text-align: left;
+        color: #000000;
+    }
+
     #category-selector {
         width: 20%;
         margin: 20px auto;
+        margin-left: 1em;
     }
 
     #categories {
@@ -626,6 +1401,7 @@ h1 {
         background-position: right 10px center;
         background-size: 24px 24px;
     }
+
 
     #categories:hover {
         border-color: #888;
@@ -674,5 +1450,9 @@ h1 {
 
     .option:hover {
         background-color: #f1f1f1;
+    }
+
+    .toggle-btn {
+        display: none;
     }
 }

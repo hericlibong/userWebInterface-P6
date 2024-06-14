@@ -42,42 +42,48 @@
                 <div id="top-rated-movies-content" class="row g-3">
                     <!-- Films les mieux notés contenu dynamique -->
                 </div>
+                <button id="toggle-top-rated" class="toggle-btn">Voir plus</button>
             </div>
         </section>
-
+        
         <section id="category1" class="mt-4">
             <div class="container">
                 <h2 class="mb-3" id="category1-title">Mystery</h2>
                 <div id="category1-content" class="row g-3">
                     <!-- Contenu dynamique de Catégorie 1 -->
                 </div>
+                <button id="toggle-category1-content" class="toggle-btn">Voir plus</button>
             </div>
         </section>
-
+        
         <section id="category2" class="mt-4">
             <div class="container">
                 <h2 class="mb-3" id="category2-title">Catégorie 2</h2>
                 <div id="category2-content" class="row g-3">
                     <!-- Contenu dynamique de Catégorie 2 -->
                 </div>
+                <button id="toggle-category2-content" class="toggle-btn">Voir plus</button>
             </div>
         </section>
-
+        
         <section id="custom-category" class="mt-4">
             <div class="container">
-                <h2 class="mb-3" id="custom-category-title">Catégorie libre</h2>
-                <div class="form-group mb-4" id="category-selector">
-                    <label for="categories" class="form-label">Choisissez une catégorie :</label>
-                    <select id="categories" class="form-select">
-                        <!-- Options dynamiques -->
-                    </select>
+                <div class="d-flex align-items-center mb-3">
+                    <h2 class="mb-0">Autres :</h2>
+                    <div class="form-group mb-0" id="category-selector">
+                        <select id="categories" class="form-select ml-3">
+                            <!-- Options dynamiques -->
+                        </select>
+                    </div>
                 </div>
                 <div id="custom-category-content" class="row g-3">
                     <!-- Contenu dynamique de Catégorie libre -->
                 </div>
+                <button id="toggle-custom-category-content" class="toggle-btn">Voir plus</button>
             </div>
         </section>
-    </div>
+        
+        
 
     <div id="modal" class="modal" style="display: none;">
         <div class="modal-content">
