@@ -228,13 +228,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('modal-genre').textContent = movie.genres.join(', ');
                 document.getElementById('modal-year').textContent = movie.year;
                 document.getElementById('modal-rating').textContent = 'IMDB Rating: ' + movie.imdb_score + '/10';
-                document.getElementById('modal-company').textContent = movie.company;
+                document.getElementById('modal-rated').textContent = movie.rated;
+                // document.getElementById('modal-rated').textContent = movie.rated;
                 document.getElementById('modal-director').textContent = movie.directors.join(', ');
                 document.getElementById('modal-cast').textContent = movie.actors.join(', ');
                 document.getElementById('modal-duration').textContent = movie.duration + ' minutes';
                 document.getElementById('modal-country').textContent = movie.countries.join(', ');
                 document.getElementById('modal-summary').textContent = movie.long_description;
                 document.getElementById('modal').style.display = 'block';
+            
+
+            
             })
             .catch(error => console.error('Error fetching movie details:', error));
     };

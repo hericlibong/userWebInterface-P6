@@ -705,6 +705,9 @@ h1 {
         font-size: 19px;
     }
 
+   
+
+
     #top-rated-movies .movie-card .btn-primary,
     #category1 .movie-card .btn-primary,
     #category2 .movie-card .btn-primary,
@@ -713,10 +716,14 @@ h1 {
         border: none;
         color: white;
         align-self: flex-end;
-       border-radius: 25%;
-       gap: 10px;
-       padding:2px, 4px, 2px, 4px;
+       border-radius: 20px 20px 20px 20px;
+       padding:5px 20px;
+       position: relative;
+       left: -25px;
+       margin-top: 1.5em;
     }
+
+
 
     #top-rated-movies .movie-card .btn-primary:hover,
     #category1 .movie-card .btn-primary:hover,
@@ -1095,12 +1102,13 @@ h1 {
 
     #best-movie-content .btn {
         align-self: flex-end;
-        background-color: #dc3545;
-        border-color: #dc3545;
+        background-color: #FA0B0B;
+        border-color: #FA0B0B;
         color: #fff;
         margin-right: 5rem;
         border-radius: 25px;
-        padding: 10px 20px 10px 20px;
+        padding: 10px 40px 10px 40px;
+    
     }
 
     #best-movie-content .btn:hover {
@@ -1140,9 +1148,9 @@ h1 {
     #category1 .movie-card img,
     #category2 .movie-card img,
     #custom-category .movie-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Crop l'image pour qu'elle remplisse le conteneur sans déformation */
+        width: 95%;
+        height: 95%;
+        object-fit:inherit; /* Crop l'image pour qu'elle remplisse le conteneur sans déformation */
         transition: transform 0.5s ease; /* Effet de transition pour le zoom */
     }
 
@@ -1224,6 +1232,10 @@ h1 {
     }
 
 
+
+
+
+    
     .modal {
         position: fixed;
         z-index: 1000;
@@ -1233,6 +1245,9 @@ h1 {
         height: 100%;
         overflow: auto;
         background-color: rgba(0, 0, 0, 0.4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .modal-content {
@@ -1240,9 +1255,14 @@ h1 {
         background-color: #fefefe;
         margin: 5% auto;
         padding: 20px;
-        border: 1px solid #090808;
-        width: 50%;
+        border: 6px solid #333;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-height: 80vh; 
+        overflow-y: auto; 
+        max-width: 778px;
+        height: 939px;
+        overflow:auto;
+    
     }
 
     .modal-header {
@@ -1261,28 +1281,30 @@ h1 {
         margin: 0;
         flex-grow: 1;
         margin-right: 20px;
-        font-size: 40px;
+        font-size: 48px;
         color: #000000;
         line-height: 1.2;
     }
 
     #modal-info {
-        font-size: 16px;
+        font-size: 24px;
+        font-weight: 600;
         margin-top: 4px;
         margin-bottom: 0;
-        line-height: 1.2;
+        line-height: 35.57px;
         font-family: 'Oswald', sans-serif;
         color: #000000;
     }
 
+
     #modal-additional-info {
-        font-size: 16px;
+        font-size: 24px;
+        font-weight: 600;
         margin-top: 4px;
         margin-bottom: 0;
-        line-height: 1.2;
+        line-height: 35.57px;
         font-family: 'Oswald', sans-serif;
         color: #000000;
-        font-weight: bold;
     }
 
     #modal-rating {
@@ -1297,11 +1319,17 @@ h1 {
 
     .modal-text {
         color: black;
-        font-weight: 100;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 35.57px;
     }
 
     .new-line {
         display: block;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 35.57px;
+
     }
 
     #modal-image {
@@ -1320,20 +1348,32 @@ h1 {
 
     #modal-summary {
         margin-top: -30px;
-        font-weight: 100;
-        font-size: 18px;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 35.57px;
     }
 
+    .cast-container {
+        margin-top: 52px; 
+    }
+    
+    .cast-container strong {
+        color: #000;
+        font-size: 20px;
+        line-height: 29.64px;
+        font-weight: 400;
+    }
+    
     #modal-cast {
         display: block;
         margin-top: -2px;
         color: #000000;
-        font-size: 12px;
+        font-size: 20px;
+        line-height: 29.64px;
+        font-weight: 300;
     }
-
-    .modal-body strong {
-        color: #000;
-    }
+    
+    
 
     .modal-footer {
         text-align: center;
@@ -1343,8 +1383,9 @@ h1 {
         align-items: center;
     }
 
+    
     .modal-footer button {
-        padding: 10px 25px;
+        padding: 10px 50px; 
         font-size: 16px;
         border: none;
         border-radius: 20px;
@@ -1357,10 +1398,15 @@ h1 {
         margin-left: 0px;
     }
 
+
+
+
     .modal-footer button:hover {
         background-color: #e60000;
         transform: scale(1.05);
     }
+
+   
 
     #custom-category .d-flex {
         display: flex;
