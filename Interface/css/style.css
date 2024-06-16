@@ -532,11 +532,12 @@ h1 {
 /* Media Queries pour Tablette */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .logo-image {
-        width: 90%;
+        width: 100%;
         align-items: center;
+        height: 107px;
     }
 
-    h2 {
+    /* h2 {
         font-family: 'Oswald', sans-serif;
         font-size: 40px;
         font-weight: 600;
@@ -545,23 +546,47 @@ h1 {
         margin: 10px 0 20px 0;
         color: #000000;
         margin-left: 1.1em;
+
+    } */
+
+
+    body {
+        width: 768px;
+        height: 4451px;
+        margin: 0 auto;
+        border: 1px solid transparent;
+        opacity: 1;
+
     }
+
+    #best-movie h2{
+    font-size: 40px;
+    font-family:  Oswald;
+    font-weight: 600;
+    line-height: 59.28px;
+    text-align: left;
+    color: #000000;
+    margin-left: 1.2em;
+
+    }
+
 
     #best-movie-content {
         display: flex;
-        width: 649px;
-        height: 312px;
+        width: 618px;
+        height: 271px;
         border: 6px solid #333;
         padding: 1em;
-        margin-left: 0em;
+        margin-left: 3em;
     }
 
     #best-movie-content .card-img-top {
-        width: 181px;
-        height: 267px;
-        margin-left: -0.5em;
-        margin-top: 0.5em;
+        width: 168px;
+        height: 248px;
+        left: -25px;
+        top: -110px;
         padding: 4px 4px 4px 4px;
+        margin-top: -10px;
     }
 
     #best-movie-content .movie-card {
@@ -594,8 +619,7 @@ h1 {
         line-height: 44.3px;
         color: #333;
         text-align: left;
-        width: 345px;
-        height: 44px;
+       
     }
 
     #best-movie-content .card-text {
@@ -604,20 +628,24 @@ h1 {
         font-family: Oswald;
         font-size: 18px;
         font-weight: 200;
-        line-height: 30px;
+        line-height: 26px;
         text-align: left;
+        width: 371px;
+        height: 83px;
+        
     }
 
+   
     #best-movie-content .btn {
         align-self: flex-end;
-        background-color: #dc3545;
-        border-color: #dc3545;
+        background-color: #FA0B0B;
+        border-color: #FA0B0B;
         color: #fff;
         margin-right: 1rem;
         border-radius: 25px;
-        padding: 10px 20px;
-        width: 123px;
-        height: 49px;
+        padding: 2px 4px;
+        width: 104px;
+        height: 40px;
         margin-top: -1.5em;
     }
 
@@ -627,7 +655,7 @@ h1 {
     }
 
     .section h2 {
-        margin-top: 0;
+        margin-top: 5px;
     }
 
     #top-rated-movies-content, 
@@ -638,9 +666,8 @@ h1 {
         flex-wrap: wrap;
         justify-content: center; /* Ajout de cette ligne */
         width: 100%; /* Assurez-vous que le conteneur occupe toute la largeur disponible */
+        margin-top: -78px;
     }
-
-
 
     #top-rated-movies .movie-card,
     #category1 .movie-card,
@@ -649,8 +676,9 @@ h1 {
         width: 295px;
         height: 286px;
         overflow: hidden; /* Cache l'excédent de l'image pour éviter la déformation */
-        margin: 15px; /* Ajuste l'espace entre les cartes */
+        margin: 20px; /* Ajuste l'espace entre les cartes */
         position: relative; /* Nécessaire pour positionner les éléments à l'intérieur */
+        padding: 15px;
        
     }
 
@@ -734,16 +762,17 @@ h1 {
 
     #top-rated-movies h2,
     #category1 h2,
-    #category2 h2{
+    #category2 h2, 
+    #custom-category h2 {
         margin-left: 1.7em; /* Aligne le titre sur la première vignette */
         font-family: 'Oswald', sans-serif;
-        font-size: 48px;
+        font-size: 40px;
         font-weight: 600;
         line-height: 71.14px;
         text-align: left;
         color: #000000;
-        margin-top: 10px;
-        margin-bottom: 20px;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 
 
@@ -986,20 +1015,29 @@ h1 {
 }
 
 /* Styles pour le bouton */
+
+
 .toggle-btn {
-    background-color: #dc3545;
-    border: none;
+    display: block;
+    margin: 0 auto; /* Centrer horizontalement */
+    width: 200px;
+    height: 36px;
+    padding: 2px 4px;
+    border-radius: 25px;
+    background-color: #FA0B0B;
     color: white;
-    padding: 10px 20px;
+    border: none;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    line-height: 36px; /* Centrer verticalement le texte */
     font-size: 16px;
-    margin: 10px 0;
     cursor: pointer;
-    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
+
+.toggle-btn:hover {
+    background-color: #e84949;
+}
 
 }
    
@@ -1235,7 +1273,7 @@ h1 {
 
 
 
-    
+
     .modal {
         position: fixed;
         z-index: 1000;
