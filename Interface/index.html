@@ -18,7 +18,8 @@
     <div class="container">
         <header class="d-flex justify-content-between align-items-center p-3 mb-4 border-bottom">
             <div class="logo">
-                <img src="images/logo.jpg" alt="Logo" class="logo-image">
+                <img src="images/logo.jpg" alt="Logo Desktop" class="logo-image-desktop">
+                <img src="images/logo_mobile.png" alt="Logo Mobile" class="logo-image-mobile">
             </div>
             
         </header>
@@ -69,7 +70,7 @@
         <section id="custom-category" class="mt-4">
             <div class="container">
                 <div class="d-flex align-items-center mb-3">
-                    <h2 class="mb-0">Autres :</h2>
+                    <h2 class="mb-0 custom-title">Autres :</h2>
                     <div class="form-group mb-0" id="category-selector">
                         <select id="categories" class="form-select ml-3">
                             <!-- Options dynamiques -->
@@ -87,6 +88,7 @@
 
     <div id="modal" class="modal" style="display: none;">
         <div class="modal-content">
+            <span class="close-cross" onclick="closeModal()">&times;</span>
             <div class="modal-header">
                 <div>
                     <h2 id="modal-title">Titre du film</h2>
@@ -99,20 +101,32 @@
                         <span id="modal-director" class="new-line"></span>
                     </p>
                 </div>
+                
+            </div>
+            <div class="modal-image-container desktop-only">
                 <img id="modal-image" src="" alt="Movie Image">
             </div>
+            
             <div class="modal-body">
+                
                 <p id="modal-summary"></p>
+
+                <div class="modal-image-tablet-container tablet-only">
+                <img id="modal-tablet-image" src="" alt="Movie Image">
+                </div>
                 <div class="cast-container">
                     <strong>Avec:</strong> 
                     <span id="modal-cast" class="new-line"></span>
                 </div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer modal-footer-desktop">
                 <button onclick="closeModal()">Fermer</button>
             </div>
         </div>
     </div>
+
+    
+    
 
     <script src="script.js" defer></script>
     <script src="movieCardCreators.js" defer></script>

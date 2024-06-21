@@ -225,11 +225,11 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(movie => {
                 document.getElementById('modal-title').textContent = movie.title;
                 document.getElementById('modal-image').src = movie.image_url;
+                document.getElementById('modal-tablet-image').src = movie.image_url;
                 document.getElementById('modal-genre').textContent = movie.genres.join(', ');
                 document.getElementById('modal-year').textContent = movie.year;
                 document.getElementById('modal-rating').textContent = 'IMDB Rating: ' + movie.imdb_score + '/10';
                 document.getElementById('modal-rated').textContent = movie.rated;
-                // document.getElementById('modal-rated').textContent = movie.rated;
                 document.getElementById('modal-director').textContent = movie.directors.join(', ');
                 document.getElementById('modal-cast').textContent = movie.actors.join(', ');
                 document.getElementById('modal-duration').textContent = movie.duration + ' minutes';
@@ -249,6 +249,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialiser l'affichage des sections
     document.querySelector('.modal-footer button').addEventListener('click', closeModal);
+    document.querySelector('.close-cross').addEventListener('click', closeModal);
+
 
     displayBestMovie();
     displayTopRatedMovies();
