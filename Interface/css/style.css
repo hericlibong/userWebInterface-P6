@@ -86,10 +86,8 @@ h1 {
         display: block;
         width: 100%;
         align-items: center;
-        margin: left 25px;
-       
+        margin-left: 23px; 
     }
-
 
     h2 {
         font-family: 'Oswald', sans-serif;
@@ -118,8 +116,6 @@ h1 {
         transition: transform 0.5s ease; /* Effet de transition pour le zoom */
     }
     
-    
-
     #best-movie-content .card {
         display: flex;
         flex-direction: column;
@@ -165,7 +161,6 @@ h1 {
         font-size: 16px;
     }
 
-
     #best-movie-content .btn:hover {
         background-color: #c82333;
         border-color: #bd2130;
@@ -205,8 +200,6 @@ h1 {
         transition: transform 0.5s ease; /* Effet de transition pour le zoom */
     }
 
-    
-    
     #top-rated-movies .movie-card .card-body,
     #category1 .movie-card .card-body,
     #category2 .movie-card .card-body,
@@ -446,16 +439,6 @@ h1 {
         margin-left: 4em;
     }
 
-    /* #custom-category h2 {
-        margin-left: 0;
-        font-family: 'Oswald', sans-serif;
-        font-size: 48px;
-        font-weight: 600;
-        line-height: 71.14px;
-        text-align: left;
-        color: #000000;
-    } */
-
     #category-selector {
         width: 50%;
         margin: 20px auto;
@@ -599,24 +582,7 @@ h1 {
         cursor: pointer;
     }
 
-    /* .logo-image {
-        width: 100%;
-        align-items: center;
-        height: 107px;
-    } */
-
-    /* h2 {
-        font-family: 'Oswald', sans-serif;
-        font-size: 40px;
-        font-weight: 600;
-        line-height: 71.14px;
-        text-align: left;
-        margin: 10px 0 20px 0;
-        color: #000000;
-        margin-left: 1.1em;
-
-    } */
-
+    
 
     body {
         width: 768px;
@@ -1095,20 +1061,6 @@ h1 {
     display: none;
 }
 
-/* Styles pour le bouton et pour ses effets */
-
-/* .movie-card.extra {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-}
-
-.movie-card.extra.show {
-    max-height: 500px;
-    transition: max-height 0.5s ease-in;
-
-} */
-
 .toggle-btn {
     display: block;
     margin: 0 auto; /* Centrer horizontalement */
@@ -1162,11 +1114,7 @@ h1 {
     .modal-footer-desktop {
         display: flex; /* Afficher le bouton de fermeture en bas pour desktop */
     }
-    
-    
-    
-    
-    
+      
     
     .logo-image {
         width: 837px;
@@ -1414,12 +1362,9 @@ h1 {
         padding: 20px;
         border: 6px solid #333;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        /* max-height: 80vh;  */
-        /* overflow-y: auto;  */
         max-width: 778px;
         height: auto;
-        /* overflow:auto; */
-    
+
     }
 
     .modal-header {
@@ -1431,8 +1376,6 @@ h1 {
         text-align: left;
         padding-right: 250px;
     }
-
-   
 
     #modal-title {
         margin: 0;
@@ -1536,8 +1479,6 @@ h1 {
         line-height: 29.64px;
         font-weight: 300;
     }
-    
-    
 
     .modal-footer {
         text-align: center;
@@ -1561,9 +1502,6 @@ h1 {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         margin-left: 0px;
     }
-
-
-
 
     .modal-footer button:hover {
         background-color: #e60000;
