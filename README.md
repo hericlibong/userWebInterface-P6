@@ -17,6 +17,11 @@ Le répertoire du projet contient les fichiers et dossiers suivants :
 └── images
     └── logos (contient les images des logos)
 
+.
+├── index.html
+
+├── js
+
 
 
 
