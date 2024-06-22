@@ -6,28 +6,6 @@ Ce projet est une interface web pour afficher des informations sur les films en 
 
 Le répertoire du projet contient les fichiers et dossiers suivants :
 
-.
-├── index.html
-├── js
-│   ├── script.js
-│   └── movieCardCreator.js
-├── css
-│   ├── style.css
-│   └── reset.css
-└── images
-    └── logos (contient les images des logos)
-
-.
-├── index.html
-
-├── js
-
-
-
-
-
-
-
 - `index.html` : Le fichier HTML principal qui contient la structure de la page web.
 - `js/script.js` : Contient le code JavaScript principal pour gérer les requêtes API et le contenu dynamique.
 - `js/movieCardCreator.js` : Contient le code pour créer les cartes de films affichées sur l'interface.
@@ -40,8 +18,12 @@ Le répertoire du projet contient les fichiers et dossiers suivants :
 1. **Cloner le Répertoire**
 
    ```sh
-   git clone https://github.com/yourusername/movie-interface-project.git
+   git clone https://github.com/hericlibong/userWebInterface-P6
    cd movie-interface-project
+
+
+
+
 
 ## Télécharger et Configurer l'API
 
