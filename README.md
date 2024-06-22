@@ -1,6 +1,11 @@
-# Projet d'Interface de Films
+#  Interface utilisateur pour une application web Python  - JustStreamIt
 
-Ce projet est une interface web pour afficher des informations sur les films en utilisant une API. Il se compose de fichiers HTML, JavaScript et CSS. L'API utilisée pour récupérer les données des films peut être configurée en suivant les instructions fournies dans le lien ci-dessous.
+## Présentation du projet 
+
+Développer une interface web l'association "JustStreamIt" et son application python qui propose des classements de films. L'objectif était de créer une interface de visualiser en temps réel un classement de films intéressants. L'interface est conçue pour être responsive et permettre aux utilisateurs  de consulter les films les mieux notés par catégories avec leurs détails spécifiques.
+
+Les données des films sont récupérées à partir de l'API [OCMovies-API-EN-FR](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR) - qui reprends les données [du site IMBD](https://www.imdb.com/) - spécialement développée pour ce projet, afin de garantir une mise à jour en temps réel.
+
 
 ## Structure du Projet
 
@@ -15,15 +20,7 @@ Le répertoire du projet contient les fichiers et dossiers suivants :
 
 ## Instructions d'Installation
 
-1. **Cloner le Répertoire**
-
-   ```sh
-   git clone https://github.com/hericlibong/userWebInterface-P6
-   cd movie-interface-project
-
-
-
-
+Assurez vous d'installer l'API et de récupérer les données au préalable
 
 ## Télécharger et Configurer l'API
 
@@ -33,9 +30,26 @@ L'API utilisée pour récupérer les données des films est disponible sur GitHu
 
 Suivez les instructions dans le dépôt de l'API pour installer et exécuter l'API localement. Assurez-vous que l'API est en cours d'exécution avant d'accéder à l'interface web.
 
-## Ouvrir l'Interface Web
+1. **Cloner le Répertoire**
 
-Ouvrez `index.html` dans votre navigateur web préféré pour afficher l'interface des films.
+   ```sh
+   git clone https://github.com/hericlibong/userWebInterface-P6
+   
+   ```
+- Dans le terminal
+   ```sh
+   cd userWebInterface-P6\Interface
+   
+   ```
+   
+- lancer le l'index `html`
+
+ ```sh
+   start index.html 
+   
+   ```
+
+
 
 ## Utilisation
 
@@ -43,13 +57,6 @@ Ouvrez `index.html` dans votre navigateur web préféré pour afficher l'interfa
 - Vous pouvez consulter les détails de chaque film en cliquant sur les cartes de films.
 - L'interface est responsive et fonctionne sur les appareils de bureau, tablettes et mobiles.
 
-## Contribution
-
-Si vous souhaitez contribuer à ce projet, veuillez cloner le répertoire et soumettre une pull request.
-
-## Licence
-
-Ce projet est sous licence MIT.
 
 ## Remerciements
 
