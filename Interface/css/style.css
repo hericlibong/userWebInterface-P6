@@ -54,9 +54,12 @@ h1 {
 /* Media Queries pour Mobile */
 @media (min-width: 456px) and (max-width: 767.98px) {
     
-    .custom-title-mobil-hidden {
+    .mobil-align {
         display: none;
-    } 
+    }
+
+
+
 
     .modal-footer-desktop {
         display: none; /* Masquer le bouton de fermeture en bas pour mobile et tablette */
