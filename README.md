@@ -20,6 +20,8 @@ Le répertoire du projet contient les fichiers et dossiers suivants :
 
 
 
+
+
 - `index.html` : Le fichier HTML principal qui contient la structure de la page web.
 - `js/script.js` : Contient le code JavaScript principal pour gérer les requêtes API et le contenu dynamique.
 - `js/movieCardCreator.js` : Contient le code pour créer les cartes de films affichées sur l'interface.
