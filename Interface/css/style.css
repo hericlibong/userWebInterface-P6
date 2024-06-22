@@ -54,7 +54,7 @@ h1 {
 /* Media Queries pour Mobile */
 @media (min-width: 456px) and (max-width: 767.98px) {
     
-    .custom-title {
+    .custom-title-mobil-hidden {
         display: none;
     } 
 
@@ -250,8 +250,6 @@ h1 {
        margin-top: 1.5em;
     }
 
-
-
     #top-rated-movies .movie-card .btn-primary:hover,
     #category1 .movie-card .btn-primary:hover,
     #category2 .movie-card .btn-primary:hover,
@@ -261,7 +259,8 @@ h1 {
 
     #top-rated-movies h2,
     #category1 h2,
-    #category2 h2 {
+    #category2 h2,
+    #custom-category h2 {
         display: block;
         margin: auto;
         text-align: center;
@@ -272,7 +271,6 @@ h1 {
         color: #000000;
         align-items: center;
     }
-
 
     .modal {
         position:fixed;
@@ -296,8 +294,7 @@ h1 {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         background-color: #fff;
         display: flex;
-        flex-direction: column;
-        
+        flex-direction: column;   
     }
 
     .modal-header {
@@ -521,8 +518,6 @@ h1 {
 .movie-card.extra {
     display: none;
 }
-
-/* Styles pour le bouton */
 
 
 .toggle-btn {
