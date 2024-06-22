@@ -6,15 +6,17 @@ Ce projet est une interface web pour afficher des informations sur les films en 
 
 Le répertoire du projet contient les fichiers et dossiers suivants :
 
+.
 ├── index.html
 ├── js
-│ ├── script.js
-│ └── movieCardCreator.js
+│   ├── script.js
+│   └── movieCardCreator.js
 ├── css
-│ ├── style.css
-│ └── reset.css
+│   ├── style.css
+│   └── reset.css
 ├── images
-│ └── logos (contient les images des logos)
+    └── logos (contient les images des logos)
+
 
 
 
