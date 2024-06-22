@@ -14,8 +14,9 @@ Le répertoire du projet contient les fichiers et dossiers suivants :
 ├── css
 │   ├── style.css
 │   └── reset.css
-├── images
+└── images
     └── logos (contient les images des logos)
+
 
 
 
