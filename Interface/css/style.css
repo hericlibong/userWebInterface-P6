@@ -398,6 +398,16 @@ h1 {
         font-weight: bold;
     }
 
+    #modal-budget {
+        font-size: 16px;
+        margin-top: 4px;
+        margin-bottom: 0;
+        line-height: 1.2;
+        font-family: 'Oswald', sans-serif;
+        color: #000000;
+        font-weight: bold;
+    }
+
     .modal-text {
         color: black;
         font-weight: 100;
@@ -471,6 +481,7 @@ h1 {
         background-repeat: no-repeat;
         background-position: right 10px center;
         background-size: 24px 24px;
+        
     }
 
     #categories:hover {
@@ -922,6 +933,16 @@ h1 {
     }
 
     #modal-rating {
+        font-size: 16px;
+        margin-top: 4px;
+        margin-bottom: 0;
+        line-height: 1.2;
+        font-family: 'Oswald', sans-serif;
+        color: #000000;
+        font-weight: bold;
+    }
+
+    #modal-budget {
         font-size: 16px;
         margin-top: 4px;
         margin-bottom: 0;
@@ -1420,6 +1441,16 @@ h1 {
         margin-bottom: 0;
         line-height: 1.2;
         font-family: 'Oswald', 'sans-serif';
+        color: #000000;
+        font-weight: bold;
+    }
+
+    #modal-budget {
+        font-size: 16px;
+        margin-top: 4px;
+        margin-bottom: 0;
+        line-height: 1.2;
+        font-family: 'Oswald', sans-serif;
         color: #000000;
         font-weight: bold;
     }

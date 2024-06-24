@@ -235,6 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('modal-duration').textContent = movie.duration + ' minutes';
                 document.getElementById('modal-country').textContent = movie.countries.join(', ');
                 document.getElementById('modal-summary').textContent = movie.long_description;
+                document.getElementById('modal-budget').textContent = 'Budget: ' + (movie.budget ? movie.budget + ' ' + movie.budget_currency : "Non Précisé"); // Ajout du budget
                 document.getElementById('modal').style.display = 'block';
             
 
