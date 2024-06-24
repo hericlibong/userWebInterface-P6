@@ -59,6 +59,16 @@ h1 {
     }
 
 
+    /* Masquer le titre "Autres" sur mobile */
+    /* .mobile-hide {
+        display: none;
+    } */
+
+    #custom-category h2 {
+        display: none;
+    }
+
+
 
 
     .modal-footer-desktop {

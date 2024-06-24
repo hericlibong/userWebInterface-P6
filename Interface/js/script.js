@@ -247,6 +247,35 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', closeModal);
     });
 
+    /**
+     * Masque le titre "Autres" sur les appareils mobiles.
+     */
+    function hideTitleOnMobile() {
+        const titleElement = document.querySelector("#custom-category h2");
+        if (window.innerWidth <= 767.98) {
+            if (titleElement) {
+                titleElement.style.display = "none";
+            }
+        } else {
+            if (titleElement) {
+                titleElement.style.display = "block";
+            }
+        }
+    }
+
+    /**
+     * Initialise le menu déroulant et ajoute l'écouteur d'événements pour les changements de catégorie.
+     */
+    function initializeCategoryDropdown() {
+        const categorySelect = document.getElementById('categories');
+        if (categorySelect) {
+            categorySelect.addEventListener('change', function() {
+                displayCustomCategoryMovies();
+                updateSelectedOptionStyle(categorySelect);
+            });
+        }
+    }
+
     // Initialiser l'affichage des sections
     document.querySelector('.modal-footer button').addEventListener('click', closeModal);
     document.querySelector('.close-cross').addEventListener('click', closeModal);
@@ -257,4 +286,11 @@ document.addEventListener('DOMContentLoaded', function() {
     displayCategoryMovies('Biography', 'category1-content', 'category1-title');
     displayCategoryMovies('Thriller', 'category2-content', 'category2-title');
     loadCategories();
+
+    // Appel initial pour masquer le titre sur mobile et initialiser le menu déroulant
+    hideTitleOnMobile();
+    initializeCategoryDropdown();
+    
+    // Ajouter un écouteur pour les événements de redimensionnement de la fenêtre
+    window.addEventListener('resize', hideTitleOnMobile);
 });
